@@ -1,96 +1,127 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  background: #f8f9fa;
-  color: #222;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+.app {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
 }
 
 .header {
-  background: #4f46e5;
-  color: white;
   text-align: center;
-  padding: 15px;
+  margin-bottom: 30px;
 }
 
-.header nav a {
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
+.header h1 {
+  font-size: 2.5rem;
+  color: #00e6ff;
 }
 
-.section {
-  padding: 30px;
-  text-align: center;
+.header p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.about, .education, .skills, .projects, .contact {
+  margin-bottom: 50px;
 }
 
 .profile-img {
   width: 180px;
   height: 180px;
   border-radius: 50%;
+  display: block;
+  margin: 0 auto 15px;
+  border: 3px solid #00e6ff;
   object-fit: cover;
-  margin: 15px auto;
-  display: block;
-  border: 4px solid #4f46e5;
 }
 
-.edu-img, .proj-img {
-  max-width: 300px;
-  height: auto;
+.education .edu-card {
+  display: flex;
+  align-items: center;
+  background: #1a1a1a;
+  margin: 12px 0;
+  padding: 10px;
   border-radius: 8px;
-  display: block;
-  margin: 10px auto;
 }
 
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-}
-
-.skills-list li {
-  background: #e0e7ff;
-  margin: 5px;
-  padding: 8px 12px;
+.edu-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-right: 15px;
   border-radius: 6px;
+  background: #fff;
 }
 
-.project-card {
-  background: white;
-  margin: 20px auto;
-  max-width: 600px;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.badges {
+.skills .badges,
+.contact .badges {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
+  justify-content: center;
 }
 
 .badge {
-  background: #4f46e5;
-  color: white;
-  padding: 8px 15px;
+  background: #222;
+  color: #00e6ff;
+  padding: 8px 14px;
   border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.badge.clickable {
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.badge.clickable:hover {
+  background: #00e6ff;
+  color: #000;
+}
+
+.projects .project-card {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.link-btn {
+  display: inline-block;
+  background: #00e6ff;
+  color: #000;
+  padding: 6px 12px;
+  margin-top: 10px;
+  border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
 }
 
-.badge.linkedin { background: #0a66c2; }
-.badge.github { background: #24292f; }
-.badge.leetcode { background: #f89f1b; color: black; }
-.badge.resume { background: #16a34a; }
-.badge.email { background: #ef4444; }
+.link-btn:hover {
+  background: #00b8cc;
+}
+
+.contact h2 {
+  text-align: center;
+}
 
 .footer {
-  background: #4f46e5;
-  color: white;
   text-align: center;
   padding: 10px;
-  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #888;
+  border-top: 1px solid #222;
 }
