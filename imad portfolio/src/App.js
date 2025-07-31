@@ -97,14 +97,14 @@ function App() {
                  target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
             </div>
 
-            {/* ✅ Electronic Signature Project */}
             <div className="project-card" onClick={() => setModalImg("/images/electronic-signature.png")}>
               <img src="/images/electronic-signature.png" alt="Electronic Signature" className="thumb"/>
               <h3>Electronic Signature App</h3>
               <a href="https://github.com/mohammed-imad-umar/Electronic_Signature-"
                  target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
-              <a href="https://mohammed-imad-umar-electronic-signature.netlify.app/"
-                 target="_blank" rel="noreferrer" className="live-demo-btn">Live Demo</a>
+              {/* ✅ Working Live Demo Badge */}
+              <a href="https://electronic-signature.netlify.app/"
+                 target="_blank" rel="noreferrer" className="live-demo-btn">🚀 Live Demo</a>
             </div>
           </section>
 
