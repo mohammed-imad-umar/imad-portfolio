@@ -3,37 +3,37 @@ import "./App.css";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [modalImg, setModalImg] = useState(null);
+  const [modalImage, setModalImage] = useState(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1500);
+    const timer = setTimeout(() => setLoading(false), 2500);
     return () => clearTimeout(timer);
   }, []);
 
-  const openModal = (src) => setModalImg(src);
-  const closeModal = () => setModalImg(null);
-
   if (loading) {
     return (
-      <div className="loading-screen">
-        <h1 className="loading-text">Loading Portfolio...</h1>
+      <div className="loader">
+        <img src="/images/profile-photo.jpeg" alt="Profile" className="loader-img" />
+        <h2 className="loader-text">Imad's Portfolio Loading...</h2>
       </div>
     );
   }
 
   return (
     <div className="app">
+      {/* Header */}
       <header className="header">
         <h1>Mohammed Imad Umar</h1>
         <p>Computer Science & Engineering (AI & ML)</p>
       </header>
 
+      {/* About Section */}
       <section className="about">
         <img
           src="/images/profile-photo.jpeg"
           alt="Profile"
           className="profile-img"
-          onClick={() => openModal("/images/profile-photo.jpeg")}
+          onClick={() => setModalImage("/images/profile-photo.jpeg")}
         />
         <h2>About Me</h2>
         <p>
@@ -44,43 +44,24 @@ function App() {
         </p>
       </section>
 
+      {/* Education Section */}
       <section className="education">
         <h2>Education</h2>
-        <div className="edu-card">
-          <img
-            src="/images/st-martins-logo.jpeg"
-            alt="St Martins"
-            onClick={() => openModal("/images/st-martins-logo.jpeg")}
-          />
-          <p>
-            <b>BTech CSE (AI & ML)</b> - St. Martins Engineering College <br />
-            2022-2026 | CGPA: 8.38
-          </p>
+        <div className="edu-card" onClick={() => setModalImage("/images/st-martins-logo.jpeg")}>
+          <img src="/images/st-martins-logo.jpeg" alt="St Martins" />
+          <p><b>BTech CSE (AI & ML)</b> - St. Martins Engineering College <br /> 2022-2026 | CGPA: 8.38</p>
         </div>
-        <div className="edu-card">
-          <img
-            src="/images/chaitanya-logo.jpeg"
-            alt="Sri Chaitanya"
-            onClick={() => openModal("/images/chaitanya-logo.jpeg")}
-          />
-          <p>
-            <b>Intermediate</b> - Sri Chaitanya Jr. College <br />
-            2020-2022 | Percentage: 94.4%
-          </p>
+        <div className="edu-card" onClick={() => setModalImage("/images/chaitanya-logo.jpeg")}>
+          <img src="/images/chaitanya-logo.jpeg" alt="Sri Chaitanya" />
+          <p><b>Intermediate</b> - Sri Chaitanya Jr. College <br /> 2020-2022 | Percentage: 94.4%</p>
         </div>
-        <div className="edu-card">
-          <img
-            src="/images/st-francis-logo.jpeg"
-            alt="St Francis"
-            onClick={() => openModal("/images/st-francis-logo.jpeg")}
-          />
-          <p>
-            <b>High School</b> - St. Francis De Sales High School <br />
-            2020 | Grade: 10.0
-          </p>
+        <div className="edu-card" onClick={() => setModalImage("/images/st-francis-logo.jpeg")}>
+          <img src="/images/st-francis-logo.jpeg" alt="St Francis" />
+          <p><b>High School</b> - St. Francis De Sales High School <br /> 2020 | Grade: 10.0</p>
         </div>
       </section>
 
+      {/* Skills */}
       <section className="skills">
         <h2>Skills</h2>
         <div className="badges">
@@ -95,102 +76,73 @@ function App() {
         </div>
       </section>
 
+      {/* Projects */}
       <section className="projects">
         <h2>Projects</h2>
-        <div className="project-card">
-          <img
-            src="/images/twitter-bots-project.png"
-            alt="Twitter Bots"
-            onClick={() => openModal("/images/twitter-bots-project.png")}
-          />
+
+        <div className="project-card" onClick={() => setModalImage("/images/twitter-bots-project.png")}>
+          <img src="/images/twitter-bots-project.png" alt="Twitter Bots" />
           <h3>Detecting Malicious Twitter Bots</h3>
           <ul>
             <li>Built ML model with 74% accuracy to classify bots.</li>
             <li>Used NLP & tweet frequency features for detection.</li>
             <li>Developed Tkinter GUI for real-time predictions.</li>
           </ul>
-          <a
-            href="https://github.com/mohammed-imad-umar/detecting-twitter-bots"
-            target="_blank"
-            rel="noreferrer"
-            className="link-btn"
-          >
+          <a href="https://github.com/mohammed-imad-umar/detecting-twitter-bots" target="_blank" rel="noreferrer" className="link-btn">
             GitHub Link
           </a>
         </div>
 
-        <div className="project-card">
-          <img
-            src="/images/smart-parking-project.png"
-            alt="Smart Parking System"
-            onClick={() => openModal("/images/smart-parking-project.png")}
-          />
+        <div className="project-card" onClick={() => setModalImage("/images/smart-parking-project.png")}>
+          <img src="/images/smart-parking-project.png" alt="Smart Parking System" />
           <h3>Smart Parking System</h3>
           <ul>
-            <li>Developed IoT-based parking system with Android + Node.js.</li>
+            <li>IoT-based parking system with Android + Node.js.</li>
             <li>Integrated GPS & sensors to reduce search time by 40%.</li>
             <li>Built secure REST APIs for authentication & payments.</li>
           </ul>
-          <a
-            href="https://github.com/mohammed-imad-umar/smart-parking-system"
-            target="_blank"
-            rel="noreferrer"
-            className="link-btn"
-          >
+          <a href="https://github.com/mohammed-imad-umar/smart-parking-system" target="_blank" rel="noreferrer" className="link-btn">
+            GitHub Link
+          </a>
+        </div>
+
+        <div className="project-card" onClick={() => setModalImage("/images/electronic-signature.png")}>
+          <img src="/images/electronic-signature.png" alt="Electronic Signature" />
+          <h3>Electronic Signature</h3>
+          <ul>
+            <li>Lightweight web app to draw and download digital signatures.</li>
+            <li>Built using HTML, CSS, and JavaScript.</li>
+          </ul>
+          <a href="https://mohammed-imad-umar.github.io/Electronic_Signature-/" target="_blank" rel="noreferrer" className="link-btn">
+            Live Demo
+          </a>
+          <a href="https://github.com/mohammed-imad-umar/Electronic_Signature-" target="_blank" rel="noreferrer" className="link-btn">
             GitHub Link
           </a>
         </div>
       </section>
 
+      {/* Contact */}
       <section className="contact">
         <h2>Get in Touch</h2>
         <div className="badges">
-          <a
-            href="https://linkedin.com/in/mohammed-imad-umar"
-            target="_blank"
-            rel="noreferrer"
-            className="badge clickable"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="https://leetcode.com/mohammed_imad_umar"
-            target="_blank"
-            rel="noreferrer"
-            className="badge clickable"
-          >
-            LeetCode
-          </a>
-          <a
-            href="https://github.com/mohammed-imad-umar"
-            target="_blank"
-            rel="noreferrer"
-            className="badge clickable"
-          >
-            GitHub
-          </a>
-          <a href="mailto:imadu1525@gmail.com" className="badge clickable">
-            Email
-          </a>
-          <a
-            href="/images/resume.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className="badge clickable"
-          >
-            Resume
-          </a>
+          <a href="https://linkedin.com/in/mohammed-imad-umar" target="_blank" rel="noreferrer" className="badge clickable">LinkedIn</a>
+          <a href="https://leetcode.com/mohammed_imad_umar" target="_blank" rel="noreferrer" className="badge clickable">LeetCode</a>
+          <a href="https://github.com/mohammed-imad-umar" target="_blank" rel="noreferrer" className="badge clickable">GitHub</a>
+          <a href="mailto:imadu1525@gmail.com" className="badge clickable">Email</a>
+          <a href="/images/resume.pdf" target="_blank" rel="noreferrer" className="badge clickable">Resume</a>
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="footer">
         <p>© 2025 Mohammed Imad Umar. All rights reserved.</p>
       </footer>
 
-      {modalImg && (
-        <div className="modal" onClick={closeModal}>
-          <span className="close">&times;</span>
-          <img src={modalImg} alt="Zoom" className="modal-img" />
+      {/* Modal */}
+      {modalImage && (
+        <div className="modal" onClick={() => setModalImage(null)}>
+          <img src={modalImage} alt="Enlarged" className="modal-content" />
         </div>
       )}
     </div>
