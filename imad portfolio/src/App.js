@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openImage = (src) => {
+    setSelectedImage(src);
+  };
+
+  const closeImage = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <div className="app">
       {/* Header */}
@@ -15,7 +25,8 @@ function App() {
         <img
           src="/images/profile-photo.jpeg"
           alt="Profile"
-          className="profile-img"
+          className="profile-img clickable"
+          onClick={() => openImage("/images/profile-photo.jpeg")}
         />
         <h2>About Me</h2>
         <p>
@@ -30,21 +41,36 @@ function App() {
       <section className="education">
         <h2>Education</h2>
         <div className="edu-card">
-          <img src="/images/st-martins-logo.jpeg" alt="St Martins" />
+          <img
+            src="/images/st-martins-logo.jpeg"
+            alt="St Martins"
+            className="clickable"
+            onClick={() => openImage("/images/st-martins-logo.jpeg")}
+          />
           <p>
             <b>BTech CSE (AI & ML)</b> - St. Martins Engineering College <br />
             2022-2026 | CGPA: 8.38
           </p>
         </div>
         <div className="edu-card">
-          <img src="/images/chaitanya-logo.jpeg" alt="Sri Chaitanya" />
+          <img
+            src="/images/chaitanya-logo.jpeg"
+            alt="Sri Chaitanya"
+            className="clickable"
+            onClick={() => openImage("/images/chaitanya-logo.jpeg")}
+          />
           <p>
             <b>Intermediate</b> - Sri Chaitanya Jr. College <br />
             2020-2022 | Percentage: 94.4%
           </p>
         </div>
         <div className="edu-card">
-          <img src="/images/st-francis-logo.jpeg" alt="St Francis" />
+          <img
+            src="/images/st-francis-logo.jpeg"
+            alt="St Francis"
+            className="clickable"
+            onClick={() => openImage("/images/st-francis-logo.jpeg")}
+          />
           <p>
             <b>High School</b> - St. Francis De Sales High School <br />
             2020 | Grade: 10.0
@@ -71,7 +97,12 @@ function App() {
       <section className="projects">
         <h2>Projects</h2>
         <div className="project-card">
-          <img src="/images/twitter-bots-project.png" alt="Twitter Bots" />
+          <img
+            src="/images/twitter-bots-project.png"
+            alt="Twitter Bots"
+            className="clickable"
+            onClick={() => openImage("/images/twitter-bots-project.png")}
+          />
           <h3>Detecting Malicious Twitter Bots</h3>
           <ul>
             <li>Built ML model with 74% accuracy to classify bots.</li>
@@ -92,6 +123,8 @@ function App() {
           <img
             src="/images/smart-parking-project.png"
             alt="Smart Parking System"
+            className="clickable"
+            onClick={() => openImage("/images/smart-parking-project.png")}
           />
           <h3>Smart Parking System</h3>
           <ul>
@@ -156,6 +189,13 @@ function App() {
       <footer className="footer">
         <p>© 2025 Mohammed Imad Umar. All rights reserved.</p>
       </footer>
+
+      {/* Modal */}
+      {selectedImage && (
+        <div className="modal" onClick={closeImage}>
+          <img src={selectedImage} alt="Full View" className="modal-img" />
+        </div>
+      )}
     </div>
   );
 }
