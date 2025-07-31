@@ -1,127 +1,176 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Global Styles ===== */
+html, body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0f0f0f;
-  color: #fff;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #0f172a; /* Dark background */
+  color: #f1f5f9; /* Light text */
+  scroll-behavior: smooth;
 }
 
 .app {
-  max-width: 1000px;
-  margin: auto;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
 }
 
+/* ===== Header ===== */
 .header {
   text-align: center;
-  margin-bottom: 30px;
+  padding: 20px;
 }
-
 .header h1 {
   font-size: 2.5rem;
-  color: #00e6ff;
+  font-weight: bold;
+  color: #38bdf8;
 }
-
 .header p {
   font-size: 1.2rem;
-  color: #ccc;
+  color: #94a3b8;
 }
 
-.about, .education, .skills, .projects, .contact {
-  margin-bottom: 50px;
+/* ===== About Section ===== */
+.about {
+  text-align: center;
+  margin: 40px 0;
 }
-
 .profile-img {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  display: block;
-  margin: 0 auto 15px;
-  border: 3px solid #00e6ff;
   object-fit: cover;
+  border: 4px solid #38bdf8;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
-.education .edu-card {
-  display: flex;
-  align-items: center;
-  background: #1a1a1a;
-  margin: 12px 0;
-  padding: 10px;
-  border-radius: 8px;
+/* ===== Section Headings ===== */
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #facc15;
+  text-align: center;
 }
 
-.edu-card img {
-  width: 60px;
-  height: 60px;
+/* ===== Education & Project Cards ===== */
+.education, .projects {
+  margin: 40px 0;
+}
+.edu-card, .project-card {
+  background: #1e293b;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px auto;
+  max-width: 600px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.edu-card:hover, .project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+.edu-card img, .project-card img {
+  width: 140px;
+  height: 140px;
   object-fit: contain;
-  margin-right: 15px;
-  border-radius: 6px;
+  margin-bottom: 10px;
+  border-radius: 8px;
   background: #fff;
+  padding: 6px;
 }
 
-.skills .badges,
-.contact .badges {
+/* ===== Skills Section ===== */
+.skills {
+  text-align: center;
+  margin: 40px 0;
+}
+.badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
   justify-content: center;
+  gap: 10px;
 }
-
 .badge {
-  background: #222;
-  color: #00e6ff;
-  padding: 8px 14px;
-  border-radius: 6px;
+  background: #38bdf8;
+  color: #0f172a;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-weight: 600;
   font-size: 0.9rem;
+  transition: background 0.2s ease;
 }
-
+.badge:hover {
+  background: #0ea5e9;
+}
 .badge.clickable {
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 
-.badge.clickable:hover {
-  background: #00e6ff;
-  color: #000;
+/* ===== Projects ===== */
+.project-card ul {
+  text-align: left;
+  margin: 10px 0;
+  padding-left: 20px;
 }
-
-.projects .project-card {
-  background: #1a1a1a;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-.project-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-
 .link-btn {
   display: inline-block;
-  background: #00e6ff;
-  color: #000;
-  padding: 6px 12px;
   margin-top: 10px;
-  border-radius: 4px;
-  text-decoration: none;
+  background: #facc15;
+  color: #0f172a;
+  padding: 6px 14px;
+  border-radius: 8px;
   font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s ease;
 }
-
 .link-btn:hover {
-  background: #00b8cc;
+  background: #eab308;
 }
 
-.contact h2 {
+/* ===== Contact Section ===== */
+.contact {
+  margin: 50px 0;
   text-align: center;
 }
 
+/* ===== Footer ===== */
 .footer {
   text-align: center;
-  padding: 10px;
-  font-size: 0.8rem;
-  color: #888;
-  border-top: 1px solid #222;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* ===== Clickable Images ===== */
+.clickable {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.clickable:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Modal for Full Image View ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.modal-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.9);
 }
