@@ -100,9 +100,9 @@ const App = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-8">About Me</h2>
             <div className="flex flex-col md:flex-row items-center md:space-x-10">
               <div className="md:w-1/3 mb-6 md:mb-0">
-                {/* Profile Photo - REPLACE THIS URL */}
+                {/* Profile Photo - URL updated */}
                 <img
-                  src="YOUR_GITHUB_RAW_URL_HERE_FOR_profile-photo.jpeg"
+                  src="https://raw.githubusercontent.com/mohammed-imad-umar/imad-portfolio/main/images/profile-photo.jpeg"
                   alt="Your Photo"
                   className="rounded-full w-64 h-64 object-cover mx-auto shadow-xl border-4 border-indigo-200"
                   onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/300x300/6366F1/FFFFFF?text=Placeholder"; }}
@@ -130,9 +130,9 @@ const App = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* BTech Education Card */}
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-200 text-left">
-                {/* St. Martins Logo - REPLACE THIS URL */}
+                {/* St. Martins Logo - URL updated */}
                 <img
-                  src="YOUR_GITHUB_RAW_URL_HERE_FOR_st-martins-logo.jpeg"
+                  src="https://raw.githubusercontent.com/mohammed-imad-umar/imad-portfolio/main/images/st-martins-logo.jpeg"
                   alt="St. Martins Engineering College Logo"
                   className="w-24 h-24 object-contain mx-auto mb-4 rounded-md"
                   onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/100x100/E0E7FF/4F46E5?text=College+Logo"; }}
@@ -145,9 +145,9 @@ const App = () => {
 
               {/* Intermediate Education Card */}
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-200 text-left">
-                {/* Sri Chaitanya Logo - REPLACE THIS URL */}
+                {/* Sri Chaitanya Logo - URL updated */}
                 <img
-                  src="YOUR_GITHUB_RAW_URL_HERE_FOR_chaitanya-logo.jpeg"
+                  src="https://raw.githubusercontent.com/mohammed-imad-umar/imad-portfolio/main/images/chaitanya-logo.jpeg"
                   alt="Sri Chaitanya Jr. College Logo"
                   className="w-24 h-24 object-contain mx-auto mb-4 rounded-md"
                   onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/100x100/E0E7FF/4F46E5?text=College+Logo"; }}
@@ -160,9 +160,9 @@ const App = () => {
 
               {/* High School Education Card */}
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-200 text-left">
-                {/* St. Francis Logo - REPLACE THIS URL */}
+                {/* St. Francis Logo - URL updated */}
                 <img
-                  src="YOUR_GITHUB_RAW_URL_HERE_FOR_st-francis-logo.jpeg"
+                  src="https://raw.githubusercontent.com/mohammed-imad-umar/imad-portfolio/main/images/st-francis-logo.jpeg"
                   alt="St. Francis De Sales High School Logo"
                   className="w-24 h-24 object-contain mx-auto mb-4 rounded-md"
                   onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/100x100/E0E7FF/4F46E5?text=School+Logo"; }}
@@ -236,9 +236,9 @@ const App = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Project Card 1: Detecting Malicious Twitter Bots */}
               <div className="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-200">
-                {/* Twitter Bots Project Image - REPLACE THIS URL */}
+                {/* Twitter Bots Project Image - URL updated */}
                 <img
-                  src="YOUR_GITHUB_RAW_URL_HERE_FOR_twitter-bots-project.png"
+                  src="https://raw.githubusercontent.com/mohammed-imad-umar/imad-portfolio/main/images/twitter-bots-project.png"
                   alt="Detecting Malicious Twitter Bots"
                   className="w-full h-48 object-cover"
                   onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/E0E7FF/4F46E5?text=Placeholder"; }}
@@ -263,9 +263,9 @@ const App = () => {
 
               {/* Project Card 2: Smart Parking System */}
               <div className="bg-gray-50 rounded-lg shadow-md overflow-hidden hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-200">
-                {/* Smart Parking Project Image - REPLACE THIS URL */}
+                {/* Smart Parking Project Image - URL updated */}
                 <img
-                  src="YOUR_GITHUB_RAW_URL_HERE_FOR_smart-parking-project.png"
+                  src="https://raw.githubusercontent.com/mohammed-imad-umar/imad-portfolio/main/images/smart-parking-project.png"
                   alt="Smart Parking System"
                   className="w-full h-48 object-cover"
                   onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/E0E7FF/4F46E5?text=Placeholder"; }}
@@ -327,7 +327,7 @@ const App = () => {
                   </svg>
                 </a>
                 {/* LeetCode Icon */}
-                <a href="https://leetcode.com/mohammed_imad_umar" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-indigo-600 transition-colors duration-300">
+                <a href="https://leetcode.com/mohammed-imad-umar" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-indigo-600 transition-colors duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" className="inline-block">
                     <path d="M13.483 0a1.23 1.23 0 0 0-.963.637L7.152 12.13l-4.24-4.24a1.23 1.23 0 0 0-1.739 0L.637 8.411a1.23 1.23 0 0 0 0 1.739l6.364 6.364a1.23 1.23 0 0 0 1.739 0l6.364-6.364a1.23 1.23 0 0 0 0-1.739L15.222.637A1.23 1.23 0 0 0 14.259 0zm-1.739 1.739l4.24 4.24L12.13 12.13l-4.24-4.24z"/>
                     <path d="M12 12c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 10c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4z"/>
@@ -335,7 +335,7 @@ const App = () => {
                 </a>
                 {/* CV Link */}
                 <a
-                  href="YOUR_PUBLIC_RESUME_PDF_URL_HERE" // <--- REPLACE THIS WITH YOUR PUBLIC PDF URL
+                  href="https://raw.githubusercontent.com/mohammed-imad-umar/imad-portfolio/main/images/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-700 hover:text-indigo-600 transition-colors duration-300"
