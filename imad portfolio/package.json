@@ -1,11 +1,5 @@
-text-center space-y-6">
-            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight animate-fade-in-down">
-              Hi, I'm <span className="text-yellow-300">Mohammed Imad Umar</span>!
-            </h1>
-            <p className="text-xl md:text-2xl font-light max-w-2xl mx-auto animate-fade-in-up">
-              A passionate <span className="font-semibold text-yellow-200">Computer Science and Engineering (AI & ML) student</span> dedicated to building amazing web experiences.
-            </p>{
-  "name": "my-portfolio-app",
+{
+  "name": "imad-portfolio-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
