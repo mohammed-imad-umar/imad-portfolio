@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [modalImage, setModalImage] = useState(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000); // 2 sec loading
+    return () => clearTimeout(timer);
+  }, []);
+
+  const openModal = (src) => setModalImage(src);
+  const closeModal = () => setModalImage(null);
+
+  if (loading) {
+    return (
+      <div className="loading-screen">
+        <h1 className="loading-text">Mohammed Imad Umar</h1>
+        <p className="loading-sub">Loading Portfolio...</p>
+      </div>
+    );
+  }
+
   return (
-    <div className="app">
+    <div className="app fade-in">
       {/* Header */}
       <header className="header">
         <h1>Mohammed Imad Umar</h1>
@@ -15,7 +35,8 @@ function App() {
         <img
           src="/images/profile-photo.jpeg"
           alt="Profile"
-          className="profile-img"
+          className="profile-img clickable"
+          onClick={() => openModal("/images/profile-photo.jpeg")}
         />
         <h2>About Me</h2>
         <p>
@@ -30,21 +51,36 @@ function App() {
       <section className="education">
         <h2>Education</h2>
         <div className="edu-card">
-          <img src="/images/st-martins-logo.jpeg" alt="St Martins" />
+          <img
+            src="/images/st-martins-logo.jpeg"
+            alt="St Martins"
+            className="clickable"
+            onClick={() => openModal("/images/st-martins-logo.jpeg")}
+          />
           <p>
             <b>BTech CSE (AI & ML)</b> - St. Martins Engineering College <br />
             2022-2026 | CGPA: 8.38
           </p>
         </div>
         <div className="edu-card">
-          <img src="/images/chaitanya-logo.jpeg" alt="Sri Chaitanya" />
+          <img
+            src="/images/chaitanya-logo.jpeg"
+            alt="Sri Chaitanya"
+            className="clickable"
+            onClick={() => openModal("/images/chaitanya-logo.jpeg")}
+          />
           <p>
             <b>Intermediate</b> - Sri Chaitanya Jr. College <br />
             2020-2022 | Percentage: 94.4%
           </p>
         </div>
         <div className="edu-card">
-          <img src="/images/st-francis-logo.jpeg" alt="St Francis" />
+          <img
+            src="/images/st-francis-logo.jpeg"
+            alt="St Francis"
+            className="clickable"
+            onClick={() => openModal("/images/st-francis-logo.jpeg")}
+          />
           <p>
             <b>High School</b> - St. Francis De Sales High School <br />
             2020 | Grade: 10.0
@@ -71,9 +107,13 @@ function App() {
       <section className="projects">
         <h2>Projects</h2>
 
-        {/* Twitter Bots */}
         <div className="project-card">
-          <img src="/images/twitter-bots-project.png" alt="Twitter Bots" />
+          <img
+            src="/images/twitter-bots-project.png"
+            alt="Twitter Bots"
+            className="clickable"
+            onClick={() => openModal("/images/twitter-bots-project.png")}
+          />
           <h3>Detecting Malicious Twitter Bots</h3>
           <ul>
             <li>Built ML model with 74% accuracy to classify bots.</li>
@@ -90,11 +130,12 @@ function App() {
           </a>
         </div>
 
-        {/* Smart Parking */}
         <div className="project-card">
           <img
             src="/images/smart-parking-project.png"
             alt="Smart Parking System"
+            className="clickable"
+            onClick={() => openModal("/images/smart-parking-project.png")}
           />
           <h3>Smart Parking System</h3>
           <ul>
@@ -112,36 +153,26 @@ function App() {
           </a>
         </div>
 
-        {/* Electronic Signature */}
         <div className="project-card">
           <img
             src="/images/electronic-signature.png"
             alt="Electronic Signature"
+            className="clickable"
+            onClick={() => openModal("/images/electronic-signature.png")}
           />
           <h3>Electronic Signature</h3>
           <ul>
-            <li>Lightweight web app to create and download digital signatures.</li>
-            <li>Built using HTML, CSS & JavaScript for a smooth canvas experience.</li>
-            <li>Download signature as image file instantly.</li>
+            <li>Web-based digital signature tool using HTML, CSS, JS.</li>
+            <li>Draw signatures and download as image files.</li>
           </ul>
-          <div className="badges">
-            <a
-              href="https://electronic-signature.netlify.app"
-              target="_blank"
-              rel="noreferrer"
-              className="badge clickable"
-            >
-              Live Demo
-            </a>
-            <a
-              href="https://github.com/mohammed-imad-umar/Electronic_Signature-"
-              target="_blank"
-              rel="noreferrer"
-              className="badge clickable"
-            >
-              GitHub Link
-            </a>
-          </div>
+          <a
+            href="https://mohammed-imad-umar.github.io/Electronic_Signature-/"
+            target="_blank"
+            rel="noreferrer"
+            className="link-btn"
+          >
+            Live Project
+          </a>
         </div>
       </section>
 
@@ -191,6 +222,14 @@ function App() {
       <footer className="footer">
         <p>© 2025 Mohammed Imad Umar. All rights reserved.</p>
       </footer>
+
+      {/* Image Modal */}
+      {modalImage && (
+        <div className="modal" onClick={closeModal}>
+          <img src={modalImage} alt="Full View" className="modal-img" />
+          <span className="close">&times;</span>
+        </div>
+      )}
     </div>
   );
 }
