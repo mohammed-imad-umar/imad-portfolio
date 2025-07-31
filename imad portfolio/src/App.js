@@ -4,10 +4,32 @@ import "./App.css";
 function App() {
   const [loading, setLoading] = useState(true);
   const [modalImage, setModalImage] = useState(null);
+  const [visibleSections, setVisibleSections] = useState({});
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2500);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Intersection Observer for fade-in
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => ({
+              ...prev,
+              [entry.target.id]: true,
+            }));
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    sections.forEach((sec) => observer.observe(sec));
+    return () => sections.forEach((sec) => observer.unobserve(sec));
   }, []);
 
   if (loading) {
@@ -27,8 +49,8 @@ function App() {
         <p>Computer Science & Engineering (AI & ML)</p>
       </header>
 
-      {/* About Section */}
-      <section className="about">
+      {/* About */}
+      <section id="about" className={`about fade-section ${visibleSections["about"] ? "show" : ""}`}>
         <img
           src="/images/profile-photo.jpeg"
           alt="Profile"
@@ -44,8 +66,8 @@ function App() {
         </p>
       </section>
 
-      {/* Education Section */}
-      <section className="education">
+      {/* Education */}
+      <section id="education" className={`education fade-section ${visibleSections["education"] ? "show" : ""}`}>
         <h2>Education</h2>
         <div className="edu-card" onClick={() => setModalImage("/images/st-martins-logo.jpeg")}>
           <img src="/images/st-martins-logo.jpeg" alt="St Martins" className="thumb" />
@@ -62,7 +84,7 @@ function App() {
       </section>
 
       {/* Skills */}
-      <section className="skills">
+      <section id="skills" className={`skills fade-section ${visibleSections["skills"] ? "show" : ""}`}>
         <h2>Skills</h2>
         <div className="badges">
           <span className="badge">Java</span>
@@ -77,7 +99,7 @@ function App() {
       </section>
 
       {/* Projects */}
-      <section className="projects">
+      <section id="projects" className={`projects fade-section ${visibleSections["projects"] ? "show" : ""}`}>
         <h2>Projects</h2>
 
         <div className="project-card" onClick={() => setModalImage("/images/twitter-bots-project.png")}>
@@ -121,7 +143,7 @@ function App() {
       </section>
 
       {/* Contact */}
-      <section className="contact">
+      <section id="contact" className={`contact fade-section ${visibleSections["contact"] ? "show" : ""}`}>
         <h2>Get in Touch</h2>
         <div className="badges">
           <a href="https://linkedin.com/in/mohammed-imad-umar" target="_blank" rel="noreferrer" className="badge clickable">LinkedIn</a>
