@@ -1,0 +1,41 @@
+text-center space-y-6">
+            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight animate-fade-in-down">
+              Hi, I'm <span className="text-yellow-300">Mohammed Imad Umar</span>!
+            </h1>
+            <p className="text-xl md:text-2xl font-light max-w-2xl mx-auto animate-fade-in-up">
+              A passionate <span className="font-semibold text-yellow-200">Computer Science and Engineering (AI & ML) student</span> dedicated to building amazing web experiences.
+            </p>{
+  "name": "my-portfolio-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
