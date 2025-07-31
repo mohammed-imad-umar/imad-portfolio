@@ -83,6 +83,7 @@ function App() {
           <section className="projects">
             <h2>Projects</h2>
 
+            {/* Twitter Bots */}
             <div className="project-card" onClick={() => setModalImg("/images/twitter-bots-project.png")}>
               <img src="/images/twitter-bots-project.png" alt="Twitter Bots" className="thumb"/>
               <h3>Detecting Malicious Twitter Bots</h3>
@@ -90,6 +91,7 @@ function App() {
                  target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
             </div>
 
+            {/* Smart Parking */}
             <div className="project-card" onClick={() => setModalImg("/images/smart-parking-project.png")}>
               <img src="/images/smart-parking-project.png" alt="Smart Parking" className="thumb"/>
               <h3>Smart Parking System</h3>
@@ -97,12 +99,12 @@ function App() {
                  target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
             </div>
 
+            {/* Electronic Signature */}
             <div className="project-card" onClick={() => setModalImg("/images/electronic-signature.png")}>
               <img src="/images/electronic-signature.png" alt="Electronic Signature" className="thumb"/>
               <h3>Electronic Signature App</h3>
               <a href="https://github.com/mohammed-imad-umar/Electronic_Signature-"
                  target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
-              {/* ✅ Working Live Demo Badge */}
               <a href="https://electronic-signature.netlify.app/"
                  target="_blank" rel="noreferrer" className="live-demo-btn">🚀 Live Demo</a>
             </div>
