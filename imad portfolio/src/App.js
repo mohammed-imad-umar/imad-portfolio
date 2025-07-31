@@ -27,13 +27,13 @@ function App() {
           )}
 
           {/* Header */}
-          <header className="header fade-section">
+          <header className="header">
             <h1>Mohammed Imad Umar</h1>
             <p>Computer Science & Engineering (AI & ML)</p>
           </header>
 
           {/* About */}
-          <section className="about fade-section">
+          <section className="about">
             <img
               src="/images/profile-photo.jpeg"
               alt="Profile"
@@ -48,7 +48,7 @@ function App() {
           </section>
 
           {/* Education */}
-          <section className="education fade-section">
+          <section className="education">
             <h2>Education</h2>
             <div className="edu-card" onClick={() => setModalImg("/images/st-martins-logo.jpeg")}>
               <img src="/images/st-martins-logo.jpeg" alt="St Martins" className="thumb" />
@@ -65,7 +65,7 @@ function App() {
           </section>
 
           {/* Skills */}
-          <section className="skills fade-section">
+          <section className="skills">
             <h2>Skills</h2>
             <div className="badges">
               <span className="badge">Java</span>
@@ -80,7 +80,7 @@ function App() {
           </section>
 
           {/* Projects */}
-          <section className="projects fade-section">
+          <section className="projects">
             <h2>Projects</h2>
 
             <div className="project-card" onClick={() => setModalImg("/images/twitter-bots-project.png")}>
@@ -102,13 +102,14 @@ function App() {
               <h3>Electronic Signature App</h3>
               <a href="https://github.com/mohammed-imad-umar/Electronic_Signature-"
                  target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
-              <a href="https://mohammed-imad-umar-electronic-signature.netlify.app"
+              {/* ✅ Fixed Live Demo Badge */}
+              <a href="https://mohammed-imad-umar-electronic-signature.netlify.app/"
                  target="_blank" rel="noreferrer" className="badge clickable">Live Demo</a>
             </div>
           </section>
 
           {/* Contact */}
-          <section className="contact fade-section">
+          <section className="contact">
             <h2>Get in Touch</h2>
             <div className="badges">
               <a href="https://linkedin.com/in/mohammed-imad-umar" target="_blank" rel="noreferrer" className="badge clickable">LinkedIn</a>
