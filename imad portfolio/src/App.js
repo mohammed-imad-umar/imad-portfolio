@@ -101,7 +101,7 @@ const App = () => {
             <div className="flex flex-col md:flex-row items-center md:space-x-10">
               <div className="md:w-1/3 mb-6 md:mb-0">
                 {/* Profile Photo - URL updated */}
-                <img
+                <img src="yourimage.jpg" alt="Profile" />
                   src="https://raw.githubusercontent.com/mohammed-imad-umar/imad-portfolio/main/images/profile-photo.jpeg"
                   alt="Your Photo"
                   className="rounded-full w-64 h-64 object-cover mx-auto shadow-xl border-4 border-indigo-200"
