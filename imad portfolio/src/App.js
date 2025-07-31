@@ -1,12 +1,14 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
 
 function App() {
   return (
-    <div className="portfolio">
-      <header className="header">
-        <h1>Mohammed Imad Umar</h1>
-        <nav>
+    <div className="App">
+
+      <header className="p-6 bg-gray-800 text-white text-center">
+        <h1 className="text-4xl font-bold">Mohammed Imad Umar</h1>
+        <nav className="mt-4 space-x-6">
+          <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#education">Education</a>
           <a href="#skills">Skills</a>
@@ -15,89 +17,86 @@ function App() {
         </nav>
       </header>
 
-      {/* About Section */}
-      <section id="about" className="section">
-        <h2>About Me</h2>
-        <img src="/images/profile-photo.jpeg" alt="Profile" className="profile-img" />
-        <p>
-          Hello! I'm Mohammed Imad Umar, a Computer Science and Engineering (AI & ML) student with strong skills in Java, Python, HTML, CSS, and JavaScript.
-          I love creating user-friendly applications and working on AI/ML projects.
+      <section id="home" className="p-8 text-center">
+        <h2 className="text-3xl font-semibold">Hi, I'm Mohammed Imad Umar!</h2>
+        <p className="mt-2 text-lg">
+          A passionate Computer Science and Engineering (AI & ML) student dedicated to building amazing web experiences.
         </p>
       </section>
 
-      {/* Education Section */}
-      <section id="education" className="section">
-        <h2>Education</h2>
-        <div className="edu-card">
-          <img src="/images/st-martins-logo.jpeg" alt="St. Martins" className="edu-img" />
-          <h3>B.Tech in CSE (AI & ML)</h3>
-          <p>St. Martins Engineering College | 2022-2026 | CGPA: 8.38</p>
+      <section id="about" className="p-8 bg-gray-100 text-center">
+        <h2 className="text-2xl font-semibold mb-4">About Me</h2>
+        <img src="/images/profile-photo.jpeg" alt="Profile"
+          className="rounded-full w-64 h-64 object-cover mx-auto shadow-xl border-4 border-indigo-200" />
+        <p className="mt-4">
+          Hello! I'm Mohammed Imad Umar, a Computer Science and Engineering (AI & ML) student with a solid foundation in
+          programming and web development. I am proficient in Java, Python, HTML, CSS, and JavaScript.
+        </p>
+      </section>
+
+      <section id="education" className="p-8">
+        <h2 className="text-2xl font-semibold mb-4">Education</h2>
+        <div className="mb-6">
+          <img src="/images/st-martins-logo.jpeg" alt="St. Martins Engineering College" className="w-96 mx-auto" />
+          <h3 className="text-xl font-bold">BTech in Computer Science Engineering (AI&ML)</h3>
+          <p>St. Martins Engineering College | 2022-2026, Hyderabad</p>
+          <p>CGPA: 8.38</p>
         </div>
-        <div className="edu-card">
-          <img src="/images/chaitanya-logo.jpeg" alt="Sri Chaitanya" className="edu-img" />
-          <h3>Intermediate</h3>
-          <p>Sri Chaitanya Jr. College | 2020-2022 | Percentage: 94.4%</p>
+        <div className="mb-6">
+          <img src="/images/chaitanya-logo.jpeg" alt="Sri Chaitanya Jr. College" className="w-96 mx-auto" />
+          <h3 className="text-xl font-bold">Intermediate</h3>
+          <p>Sri Chaitanya Jr. College | 2020-2022, Hyderabad</p>
+          <p>Percentage: 94.4%</p>
         </div>
-        <div className="edu-card">
-          <img src="/images/st-francis-logo.jpeg" alt="St. Francis" className="edu-img" />
-          <h3>High School</h3>
-          <p>St. Francis De Sales High School | 2020 | Grade: 10.0</p>
+        <div className="mb-6">
+          <img src="/images/st-francis-logo.jpeg" alt="St. Francis De Sales High School" className="w-96 mx-auto" />
+          <h3 className="text-xl font-bold">High School</h3>
+          <p>St. Francis De Sales High School | 2020, Korutla</p>
+          <p>Grade: 10.0</p>
         </div>
       </section>
 
-      {/* Skills */}
-      <section id="skills" className="section">
-        <h2>Skills</h2>
-        <ul className="skills-list">
-          <li>Java</li>
-          <li>Python</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>MySQL</li>
-          <li>AI & ML</li>
-        </ul>
-      </section>
-
-      {/* Projects */}
-      <section id="projects" className="section">
-        <h2>My Projects</h2>
-        <div className="project-card">
-          <img src="/images/twitter-bots-project.png" alt="Twitter Bots" className="proj-img" />
-          <h3>Detecting Malicious Twitter Bots</h3>
-          <ul>
-            <li>Built ML model with logistic regression achieving 74% accuracy.</li>
-            <li>Engineered NLP features like tweet frequency and URL usage.</li>
-            <li>Created a Tkinter GUI for real-time analysis.</li>
-          </ul>
-          <a className="badge" href="https://github.com/mohammed-imad-umar/twitter-bots" target="_blank">GitHub Repo</a>
+      <section id="projects" className="p-8 bg-gray-100">
+        <h2 className="text-2xl font-semibold mb-4">My Projects</h2>
+        <div className="mb-6">
+          <img src="/images/twitter-bots-project.png" alt="Detecting Twitter Bots Project" className="w-96 mx-auto" />
+          <h3 className="text-xl font-bold">Detecting Malicious Twitter Bots</h3>
+          <p>• Built ML model with logistic regression to classify bots with 74% accuracy.<br />
+            • Engineered features using NLP and tweet frequency for better detection.<br />
+            • Developed Tkinter GUI for real-time tweet analysis.
+          </p>
+          <a href="https://github.com/mohammed-imad-umar/twitter-bot-detection"
+            target="_blank" rel="noopener noreferrer"
+            className="text-blue-500 underline">GitHub Link</a>
         </div>
-        <div className="project-card">
-          <img src="/images/smart-parking-project.png" alt="Smart Parking" className="proj-img" />
-          <h3>Smart Parking System</h3>
-          <ul>
-            <li>IoT-integrated parking system using Android + Node.js.</li>
-            <li>GPS & sensors reduce search time by 40%.</li>
-            <li>Secure REST APIs for authentication & payments.</li>
-          </ul>
-          <a className="badge" href="https://github.com/mohammed-imad-umar/smart-parking" target="_blank">GitHub Repo</a>
+
+        <div className="mb-6">
+          <img src="/images/smart-parking-project.png" alt="Smart Parking System Project" className="w-96 mx-auto" />
+          <h3 className="text-xl font-bold">Smart Parking System</h3>
+          <p>• Developed IoT-based parking system with Android + Node.js.<br />
+            • Integrated GPS & sensors to reduce search time by 40%.<br />
+            • Built secure REST APIs for authentication & payments.
+          </p>
+          <a href="https://github.com/mohammed-imad-umar/smart-parking-system"
+            target="_blank" rel="noopener noreferrer"
+            className="text-blue-500 underline">GitHub Link</a>
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="section">
-        <h2>Get in Touch</h2>
-        <div className="badges">
-          <a href="mailto:Imadu1525@gmail.com" className="badge email">📧 Email</a>
-          <a href="https://www.linkedin.com/in/mohammed-imad-umar" className="badge linkedin" target="_blank">💼 LinkedIn</a>
-          <a href="https://github.com/mohammed-imad-umar" className="badge github" target="_blank">🐙 GitHub</a>
-          <a href="https://leetcode.com/u/mohammed-imad-umar" className="badge leetcode" target="_blank">🟡 LeetCode</a>
-          <a href="/resume.pdf" className="badge resume" target="_blank">📄 Resume</a>
+      <section id="contact" className="p-8 text-center">
+        <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
+
+        <div className="space-x-4">
+          <a href="mailto:Imadu1525@gmail.com" className="text-blue-600">📧 Email</a>
+          <a href="https://github.com/mohammed-imad-umar" target="_blank" rel="noopener noreferrer" className="text-gray-800">🐙 GitHub</a>
+          <a href="https://www.linkedin.com/in/mohammed-imad-umar" target="_blank" rel="noopener noreferrer" className="text-blue-800">🔗 LinkedIn</a>
+          <a href="https://leetcode.com/mohammed-imad-umar" target="_blank" rel="noopener noreferrer" className="text-green-600">💻 LeetCode</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-purple-700">📄 Resume</a>
         </div>
       </section>
 
-      <footer className="footer">
-        <p>© 2025 Mohammed Imad Umar. Built with React & Tailwind CSS.</p>
+      <footer className="p-4 bg-gray-800 text-white text-center">
+        © 2025 Mohammed Imad Umar. All rights reserved.
       </footer>
     </div>
   );
