@@ -29,9 +29,9 @@ function App() {
           {modalImg && (
             <div className="modal" onClick={() => setModalImg(null)}>
               <img src={modalImg} alt="Enlarged" className="modal-content" />
-              <div className="modal-points-overlay">
+              <div className="modal-points glass">
                 {modalPoints.map((point, i) => (
-                  <p key={i} className="point" style={{ animationDelay: `${i * 0.6}s` }}>
+                  <p key={i} className="point" style={{ animationDelay: `${i * 0.4}s` }}>
                     {point}
                   </p>
                 ))}
@@ -100,7 +100,7 @@ function App() {
               className="project-card"
               onClick={() =>
                 openModal("/images/college-companion.jpeg", [
-                  "Integrated assignment tracker & CGPA calculator",
+                  "Integrated assignment tracker and CGPA calculator",
                   "Built dynamic notes & syllabus management system",
                   "Optimized dashboard for seamless student workflow"
                 ])
