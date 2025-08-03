@@ -1,4 +1,4 @@
-// App.js
+// [START OF FILE]
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
@@ -22,7 +22,7 @@ function App() {
       {loading ? (
         <div className="loader">
           <img
-            src={`${process.env.PUBLIC_URL}/images/profile.jpeg`}
+            src={process.env.PUBLIC_URL + "/images/profile-photo.jpeg"}
             alt="Profile"
             className="loader-img blink"
           />
@@ -31,11 +31,11 @@ function App() {
       ) : (
         <div className="app">
 
-          {/* Landing Section */}
+          {/* Hero Section */}
           <section
             className="landing"
             style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/images/profile.jpeg)`,
+              backgroundImage: `url(${process.env.PUBLIC_URL + "/images/profile-photo.jpeg"})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               position: "relative",
@@ -65,10 +65,10 @@ function App() {
               </p>
               <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
                 <a href="https://github.com/mohammed-imad-umar" target="_blank" rel="noopener noreferrer">
-                  <img src={`${process.env.PUBLIC_URL}/images/github-logo.jpeg`} alt="GitHub" style={{ width: "40px" }} />
+                  <img src={process.env.PUBLIC_URL + "/images/github-logo.jpeg"} alt="GitHub" style={{ width: "40px" }} />
                 </a>
                 <a href="https://www.linkedin.com/in/mohammed-imad-umar-215a682a8" target="_blank" rel="noopener noreferrer">
-                  <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.jpeg`} alt="LinkedIn" style={{ width: "40px" }} />
+                  <img src={process.env.PUBLIC_URL + "/images/linkedin-logo.jpeg"} alt="LinkedIn" style={{ width: "40px" }} />
                 </a>
               </div>
             </div>
@@ -82,45 +82,20 @@ function App() {
           </header>
 
           {/* About Me Section */}
-          <section
-            className="about"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              padding: "60px 20px",
-              gap: "40px",
-              backgroundColor: "#f4f4f4",
-              color: "#000",
-            }}
-          >
+          <section className="about">
             <img
-              src={`${process.env.PUBLIC_URL}/images/cover.jpeg`}
+              src={process.env.PUBLIC_URL + "/images/cover.jpeg"}
               alt="Cover"
-              style={{ flex: "1", borderRadius: "10px", width: "100%", maxWidth: "350px" }}
             />
-            <div style={{ flex: "2" }}>
+            <div>
               <h2>About Me</h2>
-              <p style={{ margin: "20px 0", lineHeight: 1.6 }}>
-                I'm a Computer Science student specializing in Artificial Intelligence and Machine Learning at St. Martin's Engineering College. With a strong foundation in full-stack web development and a knack for problem-solving, I aim to create digital tools that are both functional and user-friendly. I believe that code is not just logic—it's a creative expression of problem-solving.
+              <p>
+                I'm a Computer Science student specializing in Artificial Intelligence and Machine Learning at St. Martin's Engineering College. With a strong foundation in full-stack web development and a knack for problem-solving, I aim to create digital tools that are both functional and user-friendly.
               </p>
-              <p style={{ marginBottom: "20px", lineHeight: 1.6 }}>
-                My portfolio reflects a range of real-life projects, including a Twitter bot detector and IoT-based smart parking system. I enjoy working on impactful tech that helps people—whether it's automating tasks, managing student life, or building scalable platforms. I'm always seeking new challenges and growth as a tech enthusiast.
+              <p>
+                My portfolio reflects real-life projects, including a Twitter bot detector, IoT-based smart parking, and signature tools. I enjoy building impactful tech that helps people and solves real-world problems.
               </p>
-              <a
-                href={`${process.env.PUBLIC_URL}/resume.pdf`}
-                download
-                style={{
-                  display: "inline-block",
-                  padding: "10px 20px",
-                  backgroundColor: "#007bff",
-                  color: "#fff",
-                  borderRadius: "5px",
-                  textDecoration: "none",
-                  marginTop: "10px"
-                }}
-              >
-                Download CV
-              </a>
+              <a href={process.env.PUBLIC_URL + "/resume.pdf"} download>Download CV</a>
             </div>
           </section>
 
@@ -128,21 +103,21 @@ function App() {
           <section className="education">
             <h2>Education</h2>
             <div className="edu-item">
-              <img src={`${process.env.PUBLIC_URL}/images/st-martins-logo.jpeg`} alt="BTech" />
+              <img src={process.env.PUBLIC_URL + "/images/st-martins-logo.jpeg"} alt="BTech" />
               <div>
                 <h3>St. Martin’s Engineering College</h3>
                 <p>B.Tech – Computer Science (AI & ML)</p>
               </div>
             </div>
             <div className="edu-item">
-              <img src={`${process.env.PUBLIC_URL}/images/chaitanya-logo.jpeg`} alt="Intermediate" />
+              <img src={process.env.PUBLIC_URL + "/images/chaitanya-logo.jpeg"} alt="Intermediate" />
               <div>
                 <h3>Sri Chaitanya Jr. College</h3>
                 <p>Intermediate (MPC)</p>
               </div>
             </div>
             <div className="edu-item">
-              <img src={`${process.env.PUBLIC_URL}/images/st-francis-logo.jpeg`} alt="School" />
+              <img src={process.env.PUBLIC_URL + "/images/st-francis-logo.jpeg"} alt="School" />
               <div>
                 <h3>St. Francis De Sales High School</h3>
                 <p>10th Grade – GPA: 10.0</p>
@@ -167,38 +142,40 @@ function App() {
           <section className="projects">
             <h2>Projects</h2>
             <div className="project">
-              <img src={`${process.env.PUBLIC_URL}/images/twitter-bots-project.png`} alt="Twitter Bot" onClick={() => openModal(`${process.env.PUBLIC_URL}/images/twitter-bots-project.png`)} />
+              <img
+                src={process.env.PUBLIC_URL + "/images/twitter-bots-project.png"}
+                alt="Twitter Bot"
+                onClick={() => openModal(process.env.PUBLIC_URL + "/images/twitter-bots-project.png")}
+              />
               <h3>Detecting Twitter Bots</h3>
-              <p>
-                Built a machine learning model to identify bot accounts on Twitter using behavioral data.
-                Integrated classification metrics and API testing for real-time detection.
-                Deployed the system with an intuitive UI for demonstration and testing.
-              </p>
+              <p>Built a machine learning model to identify bot accounts on Twitter with real-time API testing.</p>
             </div>
             <div className="project">
-              <img src={`${process.env.PUBLIC_URL}/images/smart-parking-project.png`} alt="Smart Parking" onClick={() => openModal(`${process.env.PUBLIC_URL}/images/smart-parking-project.png`)} />
+              <img
+                src={process.env.PUBLIC_URL + "/images/smart-parking-project.png"}
+                alt="Smart Parking"
+                onClick={() => openModal(process.env.PUBLIC_URL + "/images/smart-parking-project.png")}
+              />
               <h3>IoT Smart Parking System</h3>
-              <p>
-                Developed an IoT-based smart parking system using NodeMCU and IR sensors.
-                Created a live dashboard to monitor slot availability and usage stats.
-                Aimed at reducing congestion and optimizing urban parking infrastructure.
-              </p>
+              <p>Developed an IoT-based parking system using NodeMCU and sensors with live dashboard.</p>
             </div>
             <div className="project">
-              <img src={`${process.env.PUBLIC_URL}/images/college-companion.jpeg`} alt="College Companion" onClick={() => openModal(`${process.env.PUBLIC_URL}/images/college-companion.jpeg`)} />
+              <img
+                src={process.env.PUBLIC_URL + "/images/college-companion.jpeg"}
+                alt="College Companion"
+                onClick={() => openModal(process.env.PUBLIC_URL + "/images/college-companion.jpeg")}
+              />
               <h3>College Companion</h3>
-              <p>
-                A student-friendly platform to manage assignments, events, and resources in one place.
-                Helps in improving productivity and collaboration among students.
-              </p>
+              <p>Helps students manage notes, events, and academic resources in one platform.</p>
             </div>
             <div className="project">
-              <img src={`${process.env.PUBLIC_URL}/images/electronic-signature.png`} alt="Electronic Signature" onClick={() => openModal(`${process.env.PUBLIC_URL}/images/electronic-signature.png`)} />
-              <h3>Electronic Signature</h3>
-              <p>
-                Created a tool to draw, save, and download digital signatures easily.
-                Designed to be simple and efficient for official use cases.
-              </p>
+              <img
+                src={process.env.PUBLIC_URL + "/images/electronic-signature.png"}
+                alt="Electronic Signature"
+                onClick={() => openModal(process.env.PUBLIC_URL + "/images/electronic-signature.png")}
+              />
+              <h3>Electronic Signature Tool</h3>
+              <p>Create and download digital signatures for official use.</p>
             </div>
           </section>
 
@@ -209,7 +186,6 @@ function App() {
             <p>Phone: 8919023402</p>
           </section>
 
-          {/* Footer */}
           <footer className="footer">
             <p>&copy; 2025 Mohammed Imad Umar. All rights reserved.</p>
           </footer>
@@ -227,7 +203,6 @@ function App() {
               )}
             </div>
           )}
-
         </div>
       )}
     </>
@@ -235,3 +210,4 @@ function App() {
 }
 
 export default App;
+// [END OF FILE]
