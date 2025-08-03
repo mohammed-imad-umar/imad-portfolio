@@ -1,3 +1,4 @@
+// [START OF FILE]
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
@@ -20,162 +21,229 @@ function App() {
     <>
       {loading ? (
         <div className="loader">
-          <img src="/images/profile-photo.jpeg" alt="Profile" className="loader-img blink" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/profile.jpeg`}
+            alt="Profile"
+            className="loader-img blink"
+          />
           <p className="loader-text">Imad's Portfolio Loading...</p>
         </div>
       ) : (
         <div className="app">
-          {/* ✅ Hero Section */}
-          <section className="hero">
-            <div className="hero-overlay" />
-            <div className="hero-content">
-              <h1>Hello, I'm <span className="highlight">Mohammed Imad Umar</span></h1>
-              <p className="tagline">CSE (AI & ML) Student • Building smart and impactful tech solutions</p>
-              <div className="social-icons">
-                <a href="https://github.com/mohammed-imad-umar" target="_blank" rel="noreferrer">
-                  <img src="/images/github-logo.jpeg" alt="GitHub" />
+
+          {/* Landing Section */}
+          <section
+            className="landing"
+            style={{
+              backgroundImage: `url(${process.env.PUBLIC_URL}/images/profile.jpeg)`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              position: "relative",
+            }}
+          >
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                backgroundColor: "rgba(255,255,255,0.2)",
+                backdropFilter: "blur(20px)",
+                zIndex: 1,
+              }}
+            />
+            <div
+              style={{
+                position: "relative",
+                zIndex: 2,
+                textAlign: "center",
+                paddingTop: "150px",
+                color: "#000",
+              }}
+            >
+              <h1>Hello, I'm Mohammed Imad Umar</h1>
+              <p style={{ fontSize: "1.2rem", margin: "15px 0" }}>
+                A passionate CSE (AI & ML) student building smart and impactful tech.
+              </p>
+              <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
+                <a href="https://github.com/mohammed-imad-umar" target="_blank" rel="noopener noreferrer">
+                  <img src={`${process.env.PUBLIC_URL}/images/github-logo.jpeg`} alt="GitHub" style={{ width: "40px" }} />
                 </a>
-                <a href="https://linkedin.com/in/mohammed-imad-umar" target="_blank" rel="noreferrer">
-                  <img src="/images/linkedin-logo.jpeg" alt="LinkedIn" />
+                <a href="https://www.linkedin.com/in/mohammed-imad-umar-215a682a8" target="_blank" rel="noopener noreferrer">
+                  <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.jpeg`} alt="LinkedIn" style={{ width: "40px" }} />
                 </a>
+              </div>
+            </div>
+            <div style={{ height: "400px" }} />
+          </section>
+
+          {/* Header */}
+          <header className="header">
+            <h1>Mohammed Imad Umar</h1>
+            <p>Computer Science & Engineering (AI & ML)</p>
+          </header>
+
+          {/* About Me Section */}
+          <section
+            className="about"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              padding: "60px 20px",
+              gap: "40px",
+              backgroundColor: "#f4f4f4",
+              color: "#000",
+            }}
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/images/cover.jpeg`}
+              alt="Cover"
+              style={{ flex: "1", borderRadius: "10px", width: "100%", maxWidth: "350px" }}
+            />
+            <div style={{ flex: "2" }}>
+              <h2>About Me</h2>
+              <p style={{ margin: "20px 0", lineHeight: 1.6 }}>
+                I'm a Computer Science student specializing in Artificial Intelligence and Machine Learning at St. Martin's Engineering College. With a strong foundation in full-stack web development and a knack for problem-solving, I aim to create digital tools that are both functional and user-friendly. I believe that code is not just logic—it's a creative expression of problem-solving.
+              </p>
+              <p style={{ marginBottom: "20px", lineHeight: 1.6 }}>
+                My portfolio reflects a range of real-life projects, including a Twitter bot detector and IoT-based smart parking system. I enjoy working on impactful tech that helps people—whether it's automating tasks, managing student life, or building scalable platforms. I'm always seeking new challenges and growth as a tech enthusiast.
+              </p>
+              <a
+                href={`${process.env.PUBLIC_URL}/resume.pdf`}
+                download
+                style={{
+                  display: "inline-block",
+                  padding: "10px 20px",
+                  backgroundColor: "#007bff",
+                  color: "#fff",
+                  borderRadius: "5px",
+                  textDecoration: "none",
+                  marginTop: "10px"
+                }}
+              >
+                Download CV
+              </a>
+            </div>
+          </section>
+
+          {/* Education Section */}
+          <section className="education">
+            <h2>Education</h2>
+            <div className="edu-item">
+              <img src={`${process.env.PUBLIC_URL}/images/st-martins-logo.jpeg`} alt="BTech" />
+              <div>
+                <h3>St. Martin’s Engineering College</h3>
+                <p>B.Tech – Computer Science (AI & ML)</p>
+              </div>
+            </div>
+            <div className="edu-item">
+              <img src={`${process.env.PUBLIC_URL}/images/chaitanya-logo.jpeg`} alt="Intermediate" />
+              <div>
+                <h3>Sri Chaitanya Jr. College</h3>
+                <p>Intermediate (MPC)</p>
+              </div>
+            </div>
+            <div className="edu-item">
+              <img src={`${process.env.PUBLIC_URL}/images/st-francis-logo.jpeg`} alt="School" />
+              <div>
+                <h3>St. Francis De Sales High School</h3>
+                <p>10th Grade – GPA: 10.0</p>
               </div>
             </div>
           </section>
 
-          {/* ✅ About Section */}
-          <section className="about">
-            <img src="/images/cover.jpeg" alt="Cover" className="cover-img" />
-            <div className="about-text">
-              <h2>About Me</h2>
-              <p>
-                I am Mohammed Imad Umar, a Computer Science and Engineering (AI & ML) student passionate
-                about creating efficient and user-centric digital solutions. With expertise in Java,
-                Python, and full-stack web development, I focus on building projects that combine innovation,
-                scalability, and real-world usability.
-              </p>
-              <p>
-                My work spans AI-driven models, IoT-based applications, and productivity tools aimed at
-                solving practical challenges. I value clean design, optimized performance, and impactful
-                functionality in every project I create. Constantly learning and experimenting, I strive to
-                develop software that makes a meaningful difference in how people interact with technology.
-              </p>
-              <a href="/images/resume.pdf" download className="cv-btn">Download CV</a>
-            </div>
-          </section>
-
-          {/* ✅ Education Section */}
-          <section className="education">
-            <h2>Education</h2>
-            <div className="edu-card">
-              <img src="/images/st-martins-logo.jpeg" alt="St Martins" />
-              <p><b>BTech CSE (AI & ML)</b> - St. Martins Engineering College <br /> 2022-2026 | CGPA: 8.38</p>
-            </div>
-            <div className="edu-card">
-              <img src="/images/chaitanya-logo.jpeg" alt="Sri Chaitanya" />
-              <p><b>Intermediate</b> - Sri Chaitanya Jr. College <br /> 2020-2022 | Percentage: 94.4%</p>
-            </div>
-            <div className="edu-card">
-              <img src="/images/st-francis-logo.jpeg" alt="St Francis" />
-              <p><b>High School</b> - St. Francis De Sales High School <br /> 2020 | Grade: 10.0</p>
-            </div>
-          </section>
-
-          {/* ✅ Skills Section */}
+          {/* Skills */}
           <section className="skills">
             <h2>Skills</h2>
-            <div className="skill-badges">
-              <span>Java</span><span>Python</span><span>HTML</span><span>CSS</span>
-              <span>JavaScript</span><span>MySQL</span><span>C</span><span>AI & ML</span>
-            </div>
+            <ul>
+              <li>Java</li>
+              <li>Python</li>
+              <li>HTML, CSS, JavaScript</li>
+              <li>React.js</li>
+              <li>MySQL</li>
+              <li>Git & GitHub</li>
+            </ul>
           </section>
 
-          {/* ✅ Projects Section */}
+          {/* Projects */}
           <section className="projects">
             <h2>Projects</h2>
-
-            {/* College Companion */}
-            <div className="project-card"
-              onClick={() =>
-                openModal("/images/college-companion.jpeg", [
-                  "All-in-one student productivity hub",
-                  "Includes CGPA Calculator, Timetable & Notes",
-                  "Built with React.js and Firebase"
-                ])
-              }>
-              <img src="/images/college-companion.jpeg" alt="College Companion" />
+            <div className="project">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/twitter-bots-project.png`}
+                alt="Twitter Bot"
+                onClick={() => openModal(`${process.env.PUBLIC_URL}/images/twitter-bots-project.png`)}
+              />
+              <h3>Detecting Twitter Bots</h3>
+              <p>
+                Built a machine learning model to identify bot accounts on Twitter using behavioral data.
+                Integrated classification metrics and API testing for real-time detection.
+                Deployed the system with an intuitive UI for demonstration and testing.
+              </p>
+            </div>
+            <div className="project">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/smart-parking-project.png`}
+                alt="Smart Parking"
+                onClick={() => openModal(`${process.env.PUBLIC_URL}/images/smart-parking-project.png`)}
+              />
+              <h3>IoT Smart Parking System</h3>
+              <p>
+                Developed an IoT-based smart parking system using NodeMCU and IR sensors.
+                Created a live dashboard to monitor slot availability and usage stats.
+                Aimed at reducing congestion and optimizing urban parking infrastructure.
+              </p>
+            </div>
+            <div className="project">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/college-companion.jpeg`}
+                alt="College Companion"
+                onClick={() => openModal(`${process.env.PUBLIC_URL}/images/college-companion.jpeg`)}
+              />
               <h3>College Companion</h3>
-              <a href="https://github.com/mohammed-imad-umar/college-companion" target="_blank" rel="noreferrer" className="link-btn">GitHub</a>
-              <a href="https://college-companion-by-imad.netlify.app/" target="_blank" rel="noreferrer" className="live-btn">🚀 Live Demo</a>
+              <p>
+                A web app for students to manage schedules, notes, and assignments in one place.
+                Helps organize college life with ease and productivity.
+              </p>
             </div>
-
-            {/* Twitter Bots */}
-            <div className="project-card"
-              onClick={() =>
-                openModal("/images/twitter-bots-project.png", [
-                  "Built ML model with 74% accuracy to classify bots",
-                  "Implemented NLP & tweet-frequency features",
-                  "Developed Tkinter GUI for real-time predictions"
-                ])
-              }>
-              <img src="/images/twitter-bots-project.png" alt="Twitter Bots" />
-              <h3>Detecting Malicious Twitter Bots</h3>
-              <a href="https://github.com/mohammed-imad-umar/detecting-twitter-bots" target="_blank" rel="noreferrer" className="link-btn">GitHub</a>
-            </div>
-
-            {/* Smart Parking */}
-            <div className="project-card"
-              onClick={() =>
-                openModal("/images/smart-parking-project.png", [
-                  "IoT-based parking system with Android + Node.js",
-                  "Integrated GPS & sensors to reduce search time by 40%",
-                  "Built secure REST APIs for authentication & payments"
-                ])
-              }>
-              <img src="/images/smart-parking-project.png" alt="Smart Parking" />
-              <h3>Smart Parking System</h3>
-              <a href="https://github.com/mohammed-imad-umar/smart-parking-system" target="_blank" rel="noreferrer" className="link-btn">GitHub</a>
-            </div>
-
-            {/* Electronic Signature */}
-            <div className="project-card"
-              onClick={() =>
-                openModal("/images/electronic-signature.png", [
-                  "Lightweight web-based signature app",
-                  "Built with HTML, CSS, and JavaScript",
-                  "Download digital signature as image"
-                ])
-              }>
-              <img src="/images/electronic-signature.png" alt="Electronic Signature" />
-              <h3>Electronic Signature App</h3>
-              <a href="https://github.com/mohammed-imad-umar/Electronic_Signature-" target="_blank" rel="noreferrer" className="link-btn">GitHub</a>
-              <a href="https://electronic-signature-by-imad.netlify.app/" target="_blank" rel="noreferrer" className="live-btn">🚀 Live Demo</a>
+            <div className="project">
+              <img
+                src={`${process.env.PUBLIC_URL}/images/electronic-signature.png`}
+                alt="Electronic Signature"
+                onClick={() => openModal(`${process.env.PUBLIC_URL}/images/electronic-signature.png`)}
+              />
+              <h3>Electronic Signature</h3>
+              <p>
+                A tool to draw and download digital signatures for official documents.
+                Provides a convenient way to generate and share e-signatures online.
+              </p>
             </div>
           </section>
 
-          {/* ✅ Contact Section */}
+          {/* Contact Section */}
           <section className="contact">
             <h2>Contact</h2>
-            <div className="contact-info">
-              <p>📧 <a href="mailto:imadu1525@gmail.com">imadu1525@gmail.com</a></p>
-              <p>📱 +91 8919023402</p>
-            </div>
+            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            <p>Phone: 8919023402</p>
           </section>
 
+          {/* Footer */}
           <footer className="footer">
-            <p>© 2025 Mohammed Imad Umar. All rights reserved.</p>
+            <p>&copy; 2025 Mohammed Imad Umar. All rights reserved.</p>
           </footer>
 
-          {/* ✅ Modal */}
+          {/* Modal */}
           {modalImg && (
             <div className="modal" onClick={() => setModalImg(null)}>
               <img src={modalImg} alt="Modal" />
-              <div className="modal-points">
-                {modalPoints.map((point, i) => (
-                  <p key={i} style={{ animationDelay: `${i * 0.5}s` }}>{point}</p>
-                ))}
-              </div>
+              {modalPoints.length > 0 && (
+                <ul>
+                  {modalPoints.map((point, index) => (
+                    <li key={index}>{point}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           )}
+
         </div>
       )}
     </>
@@ -183,3 +251,4 @@ function App() {
 }
 
 export default App;
+// [END OF FILE]
