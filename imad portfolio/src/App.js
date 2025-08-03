@@ -22,7 +22,7 @@ function App() {
       {loading ? (
         <div className="loader">
           <img
-            src="/images/profile.jpg"
+            src="/images/profile.jpeg"
             alt="Profile"
             className="loader-img blink"
           />
@@ -35,7 +35,7 @@ function App() {
           <section
             className="landing"
             style={{
-              backgroundImage: "url('/images/profile.jpg')",
+              backgroundImage: "url('/images/profile.jpeg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               position: "relative",
@@ -124,25 +124,25 @@ function App() {
             </div>
           </section>
 
-          {/* Education Section - UNTOUCHED */}
+          {/* Education Section */}
           <section className="education">
             <h2>Education</h2>
             <div className="edu-item">
-              <img src="/images/btech.jpg" alt="BTech" />
+              <img src="/images/btech.jpeg" alt="BTech" />
               <div>
                 <h3>St. Martin’s Engineering College</h3>
                 <p>B.Tech – Computer Science (AI & ML)</p>
               </div>
             </div>
             <div className="edu-item">
-              <img src="/images/inter.jpg" alt="Intermediate" />
+              <img src="/images/inter.jpeg" alt="Intermediate" />
               <div>
                 <h3>Sri Chaitanya Jr. College</h3>
                 <p>Intermediate (MPC)</p>
               </div>
             </div>
             <div className="edu-item">
-              <img src="/images/school.jpg" alt="School" />
+              <img src="/images/school.jpeg" alt="School" />
               <div>
                 <h3>St. Francis De Sales High School</h3>
                 <p>10th Grade – GPA: 10.0</p>
@@ -150,7 +150,7 @@ function App() {
             </div>
           </section>
 
-          {/* Skills - UNTOUCHED */}
+          {/* Skills */}
           <section className="skills">
             <h2>Skills</h2>
             <ul>
@@ -163,7 +163,7 @@ function App() {
             </ul>
           </section>
 
-          {/* Projects - UNTOUCHED */}
+          {/* Projects */}
           <section className="projects">
             <h2>Projects</h2>
             <div className="project">
@@ -186,19 +186,19 @@ function App() {
             </div>
           </section>
 
-          {/* Contact Section (ONLY Email + Phone) */}
+          {/* Contact Section */}
           <section className="contact">
             <h2>Contact</h2>
             <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
             <p>Phone: 8919023402</p>
           </section>
 
-          {/* Footer - UNTOUCHED */}
+          {/* Footer */}
           <footer className="footer">
             <p>&copy; 2025 Mohammed Imad Umar. All rights reserved.</p>
           </footer>
 
-          {/* Modal - UNTOUCHED */}
+          {/* Modal */}
           {modalImg && (
             <div className="modal" onClick={() => setModalImg(null)}>
               <img src={modalImg} alt="Modal" />
