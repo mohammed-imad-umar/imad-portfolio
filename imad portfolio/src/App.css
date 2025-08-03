@@ -1,68 +1,83 @@
-/* ✅ Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
+/* ---------- GENERAL ---------- */
 body {
-  background: #0b0b0b;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0d0d0d;
   color: #fff;
-  line-height: 1.6;
 }
 
-/* ✅ Loader */
+.app {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ---------- LOADER ---------- */
 .loader {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
-  background: #0b0b0b;
+  background: #0d0d0d;
 }
 
 .loader-img {
-  width: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite ease-in-out;
 }
 
 .loader-text {
-  color: #00ff99;
-  font-weight: 600;
+  font-size: 1.3rem;
+  color: #00ffc3;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #00ffc3;
+  width: 0;
+  animation: typing 2s steps(30, end) forwards;
 }
 
-/* ✅ Header */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 250px; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* ---------- HEADER ---------- */
 .header {
   text-align: center;
-  padding: 30px 15px;
+  margin-bottom: 40px;
 }
 
 .header h1 {
-  font-size: 2.2rem;
-  color: #00ff99;
-  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #00ffc3;
 }
 
 .header p {
   color: #aaa;
-  font-size: 1rem;
 }
 
-/* ✅ About */
+/* ---------- ABOUT ---------- */
 .about {
   text-align: center;
-  padding: 20px;
+  margin-bottom: 50px;
 }
 
 .profile-img {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  margin-bottom: 15px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -71,32 +86,36 @@ body {
   transform: scale(1.05);
 }
 
-/* ✅ Education */
+/* ---------- EDUCATION ---------- */
 .education {
-  padding: 20px;
-  text-align: center;
+  margin-bottom: 50px;
 }
 
 .edu-card {
-  margin: 15px auto;
+  background: #1a1a1a;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
-  max-width: 300px;
-}
-
-.edu-card img {
-  width: 100px;
-  height: auto;
-  margin-bottom: 10px;
   transition: transform 0.3s ease;
 }
 
-.edu-card img:hover {
-  transform: scale(1.05);
+.edu-card:hover {
+  transform: scale(1.02);
 }
 
-/* ✅ Skills */
+.thumb {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  margin-right: 15px;
+}
+
+/* ---------- SKILLS ---------- */
 .skills {
-  padding: 20px;
+  margin-bottom: 50px;
   text-align: center;
 }
 
@@ -104,120 +123,123 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .badge {
-  background: #1c1c1c;
-  padding: 8px 14px;
+  padding: 6px 12px;
+  background: #222;
   border-radius: 20px;
+  color: #00ffc3;
   font-size: 0.85rem;
-  color: #00ff99;
-  border: 1px solid #00ff99;
 }
 
-/* ✅ Projects */
+.badge.clickable:hover {
+  background: #00ffc3;
+  color: #000;
+}
+
+/* ---------- PROJECTS ---------- */
 .projects {
-  padding: 20px;
-  text-align: center;
+  margin-bottom: 50px;
 }
 
 .project-card {
-  margin: 20px auto;
-  max-width: 300px;
+  background: #1a1a1a;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 12px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
 }
 
 .project-card img.thumb {
   width: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+  border-radius: 12px;
 }
 
-.project-card img.thumb:hover {
-  transform: scale(1.03);
-}
-
-.link-btn,
-.live-demo {
+.link-btn, .live-demo {
   display: inline-block;
-  margin: 8px 5px;
-  padding: 8px 14px;
-  border-radius: 6px;
+  margin: 8px 5px 0;
+  padding: 6px 12px;
+  background: #00ffc3;
+  color: #000;
+  border-radius: 8px;
   text-decoration: none;
-  color: #fff;
-  background: #00ff99;
-  font-weight: 600;
+  font-weight: bold;
+  font-size: 0.9rem;
   transition: background 0.3s ease;
 }
 
-.link-btn:hover,
-.live-demo:hover {
-  background: #00cc77;
+.link-btn:hover, .live-demo:hover {
+  background: #00cc9a;
 }
 
-/* ✅ Modal */
+/* ---------- MODAL ---------- */
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  z-index: 1000;
+  align-items: center;
+  z-index: 100;
+  animation: fadeIn 0.3s ease;
 }
 
 .modal-content {
-  max-width: 85%;
-  max-height: 70%;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-/* ✅ ATS Points - Gradient Text */
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
 .modal-points {
+  position: absolute;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  margin-top: 10px;
 }
 
-.modal-points .point {
-  font-size: 1rem;
-  font-weight: 600;
-  background: linear-gradient(90deg, #00ff99, #00ccff);
+.point {
+  margin: 8px 0;
+  background: linear-gradient(90deg, #00ffc3, #00aaff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 5px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
   opacity: 0;
-  animation: fadeInUp 0.6s forwards;
+  animation: slideIn 0.6s forwards;
 }
 
-.modal-points .point:nth-child(2) { animation-delay: 0.4s; }
-.modal-points .point:nth-child(3) { animation-delay: 0.8s; }
-
-@keyframes fadeInUp {
-  from {
-    transform: translateY(15px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* ✅ Contact */
+/* ---------- CONTACT ---------- */
 .contact {
-  padding: 20px;
   text-align: center;
+  margin-bottom: 50px;
 }
 
+/* ---------- FOOTER ---------- */
 .footer {
   text-align: center;
-  padding: 20px;
-  font-size: 0.85rem;
-  color: #777;
+  color: #555;
+  padding: 20px 0;
+  font-size: 0.9rem;
 }
