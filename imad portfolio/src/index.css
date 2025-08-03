@@ -1,25 +1,14 @@
-/* Reset and root styles */
-html, body, #root {
+/* index.css */
+
+html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   background-color: #ffffff;
-  color: #111;
+  color: #000000;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-/* Scrollbar (optional aesthetic) */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #f0f0f0;
+#root {
+  width: 100%;
 }
