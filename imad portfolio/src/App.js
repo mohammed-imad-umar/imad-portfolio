@@ -29,124 +29,146 @@ function App() {
         </div>
       ) : (
         <div className="app">
-          {/* Modal */}
-          {modalImg && (
-            <div className="modal" onClick={() => setModalImg(null)}>
-              <img src={modalImg} alt="Enlarged" className="modal-content" />
-              <div className="modal-points">
-                {modalPoints.map((point, i) => (
-                  <p
-                    key={i}
-                    className="point"
-                    style={{ animationDelay: `${i * 0.4}s` }}
-                  >
-                    {point}
-                  </p>
-                ))}
-              </div>
-            </div>
-          )}
 
-          {/* Landing Section */}
-          <section className="landing">
-            <div className="landing-bg">
-              <img
-                src="/images/profile-photo.jpeg"
-                alt="Background"
-                className="landing-blur"
-              />
-            </div>
-            <div className="landing-content">
+          {/* ==== Landing Section (Updated) ==== */}
+          <section
+            className="landing"
+            style={{
+              backgroundImage: "url('/images/profile-photo.jpeg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              position: "relative",
+            }}
+          >
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                backgroundColor: "rgba(255,255,255,0.2)",
+                backdropFilter: "blur(20px)",
+                zIndex: 1,
+              }}
+            />
+            <div
+              style={{
+                position: "relative",
+                zIndex: 2,
+                textAlign: "center",
+                paddingTop: "150px",
+                color: "#000",
+              }}
+            >
               <h1>Hello, I'm Mohammed Imad Umar</h1>
-              <p>A passionate AI & ML enthusiast shaping ideas into real tech</p>
-              <div className="social-icons">
+              <p style={{ fontSize: "1.2rem", margin: "15px 0" }}>
+                A passionate CSE (AI & ML) student committed to building smart solutions
+              </p>
+              <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
                 <a
                   href="https://github.com/mohammed-imad-umar"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <img
                     src="/images/github-logo.png"
                     alt="GitHub"
-                    className="icon"
+                    style={{ width: "40px" }}
                   />
                 </a>
                 <a
-                  href="https://linkedin.com/in/mohammed-imad-umar"
+                  href="https://www.linkedin.com/in/mohammed-imad-umar-215a682a8"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <img
                     src="/images/linkedin-logo.png"
                     alt="LinkedIn"
-                    className="icon"
+                    style={{ width: "40px" }}
                   />
                 </a>
               </div>
             </div>
+            <div style={{ height: "400px" }} />{/* spacing */}
           </section>
 
-          {/* About Me */}
-          <section className="about-section">
-            <div className="about-left">
-              <img
-                src="/images/cover.jpg"
-                alt="Cover"
-                className="about-cover"
-              />
-            </div>
-            <div className="about-right">
+          {/* ==== Header (UNCHANGED) ==== */}
+          <header className="header">
+            <h1>Mohammed Imad Umar</h1>
+            <p>Computer Science & Engineering (AI & ML)</p>
+          </header>
+
+          {/* ==== About Me Section (Updated) ==== */}
+          <section
+            className="about"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              padding: "60px 20px",
+              gap: "40px",
+              backgroundColor: "#f4f4f4",
+              color: "#000",
+            }}
+          >
+            <img
+              src="/images/cover.jpg"
+              alt="Cover"
+              style={{ flex: "1", borderRadius: "10px", width: "100%", maxWidth: "350px" }}
+            />
+            <div style={{ flex: "2" }}>
               <h2>About Me</h2>
-              <p>
-                I'm a Computer Science Engineering (AI & ML) student with a strong passion
-                for developing impactful software solutions. With solid experience in Java,
-                Python, and full-stack technologies, I strive to merge technical excellence
-                with real-world usability.
+              <p style={{ margin: "20px 0", lineHeight: 1.6 }}>
+                I am a Computer Science Engineering student specializing in Artificial Intelligence and Machine Learning, with a deep passion for transforming innovative ideas into impactful applications. My academic journey at St. Martin's Engineering College has bolstered my technical foundation, while hands-on experience in full-stack development and cloud deployment drives my ambition to solve real-world problems through technology.
               </p>
-              <p>
-                My focus is on solving practical problems through intelligent systems,
-                user-centric design, and clean code. I enjoy hackathons, building deployable
-                apps, and working on projects that make a difference.
+              <p style={{ marginBottom: "20px", lineHeight: 1.6 }}>
+                Beyond academics, I’ve led projects ranging from predictive bot detection and IoT-based parking systems to user-centric web tools aimed at productivity enhancement. I blend creativity with analytical thinking and continuously seek opportunities to contribute to meaningful tech innovations while honing my skills.
               </p>
               <a
-                href="/images/resume.pdf"
-                target="_blank"
-                rel="noreferrer"
-                className="download-btn"
+                href="/resume.pdf"
+                download
+                style={{
+                  display: "inline-block",
+                  padding: "10px 20px",
+                  backgroundColor: "#007bff",
+                  color: "#fff",
+                  borderRadius: "5px",
+                  textDecoration: "none",
+                }}
               >
                 Download CV
               </a>
             </div>
           </section>
 
-          {/* Education */}
+          {/* ==== Education Section (UNCHANGED) ==== */}
           <section className="education">
             <h2>Education</h2>
-            <div
-              className="edu-card"
-              onClick={() => openModal("/images/btech.jpg")}
-            >
-              <img src="/images/btech.jpg" alt="BTech" className="thumb" />
+            <div className="edu-card" onClick={() => openModal("/images/st-martins-logo.jpeg")}>
+              <img
+                src="/images/st-martins-logo.jpeg"
+                alt="St Martins"
+                className="thumb"
+              />
               <p>
-                <b>BTech CSE (AI & ML)</b> - St. Martin's Engineering College <br />
-                2022-2026 | CGPA: 8.38
+                <b>BTech CSE (AI & ML)</b> - St. Martins Engineering College <br />
+                2022–2026 | CGPA: 8.38
               </p>
             </div>
-            <div
-              className="edu-card"
-              onClick={() => openModal("/images/inter.jpg")}
-            >
-              <img src="/images/inter.jpg" alt="Intermediate" className="thumb" />
+            <div className="edu-card" onClick={() => openModal("/images/chaitanya-logo.jpeg")}>
+              <img
+                src="/images/chaitanya-logo.jpeg"
+                alt="Sri Chaitanya"
+                className="thumb"
+              />
               <p>
                 <b>Intermediate</b> - Sri Chaitanya Jr. College <br />
-                2020-2022 | Percentage: 94.4%
+                2020–2022 | Percentage: 94.4%
               </p>
             </div>
-            <div
-              className="edu-card"
-              onClick={() => openModal("/images/school.jpg")}
-            >
-              <img src="/images/school.jpg" alt="School" className="thumb" />
+            <div className="edu-card" onClick={() => openModal("/images/st-francis-logo.jpeg")}>
+              <img
+                src="/images/st-francis-logo.jpeg"
+                alt="St Francis"
+                className="thumb"
+              />
               <p>
                 <b>High School</b> - St. Francis De Sales High School <br />
                 2020 | Grade: 10.0
@@ -154,7 +176,7 @@ function App() {
             </div>
           </section>
 
-          {/* Skills */}
+          {/* ==== Skills Section (UNCHANGED) ==== */}
           <section className="skills">
             <h2>Skills</h2>
             <div className="badges">
@@ -169,11 +191,9 @@ function App() {
             </div>
           </section>
 
-          {/* Projects */}
+          {/* ==== Projects Section (UNCHANGED) ==== */}
           <section className="projects">
             <h2>Projects</h2>
-
-            {/* College Companion */}
             <div
               className="project-card"
               onClick={() =>
@@ -207,12 +227,10 @@ function App() {
                 🚀 Live Demo
               </a>
             </div>
-
-            {/* Twitter Bots */}
             <div
               className="project-card"
               onClick={() =>
-                openModal("/images/twitter-bot.jpg", [
+                openModal("/images/twitter-bots-project.png", [
                   "Built ML model with 74% accuracy to classify bots",
                   "Implemented NLP & tweet-frequency features",
                   "Developed Tkinter GUI for real-time predictions",
@@ -220,7 +238,7 @@ function App() {
               }
             >
               <img
-                src="/images/twitter-bot.jpg"
+                src="/images/twitter-bots-project.png"
                 alt="Twitter Bots"
                 className="thumb"
               />
@@ -234,12 +252,10 @@ function App() {
                 GitHub Link
               </a>
             </div>
-
-            {/* Smart Parking */}
             <div
               className="project-card"
               onClick={() =>
-                openModal("/images/smart-parking.jpg", [
+                openModal("/images/smart-parking-project.png", [
                   "IoT-based parking system with Android + Node.js",
                   "Integrated GPS & sensors to reduce search time by 40%",
                   "Built secure REST APIs for authentication & payments",
@@ -247,7 +263,7 @@ function App() {
               }
             >
               <img
-                src="/images/smart-parking.jpg"
+                src="/images/smart-parking-project.png"
                 alt="Smart Parking"
                 className="thumb"
               />
@@ -263,22 +279,33 @@ function App() {
             </div>
           </section>
 
-          {/* Contact */}
-          <section className="contact">
-            <h2>Get in Touch</h2>
-            <div className="badges">
-              <a href="mailto:imadu1525@gmail.com" className="contact-btn email">
-                <i className="fas fa-envelope"></i> imadu1525@gmail.com
-              </a>
-              <span className="contact-btn phone">
-                <i className="fas fa-phone"></i> 8919023402
-              </span>
+          {/* ==== Contact Section (Updated) ==== */}
+          <section className="contact" style={{ padding: "50px 20px", textAlign: "center", backgroundColor: "#fff", color: "#000" }}>
+            <h2>Contact</h2>
+            <div style={{ marginTop: "20px", lineHeight: 1.6 }}>
+              <div><strong>Email:</strong> imadu1525@gmail.com</div>
+              <div><strong>Phone:</strong> 8919023402</div>
             </div>
           </section>
 
+          {/* ==== Footer (UNCHANGED) ==== */}
           <footer className="footer">
             <p>© 2025 Mohammed Imad Umar. All rights reserved.</p>
           </footer>
+
+          {modalImg && (
+            <div className="modal" onClick={() => setModalImg(null)}>
+              <img src={modalImg} alt="Enlarged" className="modal-content" />
+              <div className="modal-points">
+                {modalPoints.map((point, index) => (
+                  <p key={index} className="point" style={{ animationDelay: `${index * 0.4}s` }}>
+                    {point}
+                  </p>
+                ))}
+              </div>
+            </div>
+          )}
+
         </div>
       )}
     </>
