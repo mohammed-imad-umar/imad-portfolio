@@ -1,3 +1,4 @@
 [build]
+  base = "imad portfolio"
   command = "CI=false npm run build"
-  publish = "build"
+  publish = "imad portfolio/build"
