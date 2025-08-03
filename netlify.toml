@@ -1,5 +1,3 @@
 [build]
-  command = "npm run build"
+  command = "CI=false npm run build"
   publish = "build"
-  base = "imad portfolio"
-  functions = "" # This explicitly sets the functions directory to empty
