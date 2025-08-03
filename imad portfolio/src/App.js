@@ -12,164 +12,137 @@ function App() {
   if (loading) {
     return (
       <div className="loader">
-        <div className="loader-circle blink">
-          <img
-            src="/images/profile-photo.jpeg"
-            alt="Profile"
-            className="loader-img"
-          />
+        <div className="loader-circle">
+          <img src="/profile-photo.jpeg" alt="Loading" className="loader-img blink" />
         </div>
-        <p className="loader-text blink">Loading...</p>
+        <p className="loader-text blink">Loading Portfolio...</p>
       </div>
     );
   }
 
   return (
-    <div className="app">
-      {/* Hero Section */}
+    <div className="App">
+      {/* ✅ Hero Section */}
       <section className="hero">
-        <img
-          src="/images/profile-photo.jpeg"
-          alt="Profile"
-          className="hero-bg"
-        />
+        <img src="/profile-photo.jpeg" alt="Background" className="hero-bg" />
         <div className="hero-content">
-          <h1>Hello, I am <span>Imad Umar</span></h1>
-          <p className="tagline">A passionate developer crafting intelligent solutions</p>
+          <h1>Hello, I'm Imad Umar</h1>
+          <p>Crafting seamless digital experiences with code and creativity.</p>
           <div className="social-links">
             <a href="https://github.com/mohammed-imad-umar" target="_blank" rel="noreferrer">
-              <img src="/images/github-logo.jpeg" alt="GitHub" />
+              <img src="/github-logo.jpeg" alt="GitHub" />
             </a>
-            <a href="https://linkedin.com/in/mohammed-imad-umar" target="_blank" rel="noreferrer">
-              <img src="/images/linkedin-logo.jpeg" alt="LinkedIn" />
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+              <img src="/linkedin-logo.jpeg" alt="LinkedIn" />
             </a>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
+      {/* ✅ About Me */}
       <section className="about">
-        <img src="/images/cover.jpeg" alt="Cover" className="cover-photo" />
-        <div className="about-text">
-          <h2>About Me</h2>
-          <p>
-            I am a Computer Science student specializing in AI & ML, with a strong passion
-            for developing intelligent and user-centric solutions. My expertise lies in
-            full-stack development and machine learning, focusing on building scalable
-            and impactful applications.
-          </p>
-          <p>
-            Alongside my academic journey, I have worked on multiple real-world projects,
-            honing my skills in problem-solving, data structures, and clean software
-            architecture. I aim to combine creativity with technology to deliver premium
-            digital experiences.
-          </p>
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cv-btn"
-          >
-            View CV
-          </a>
-        </div>
+        <h2>About Me</h2>
+        <img src="/cover.jpeg" alt="Cover" className="cover-img" />
+        <p>
+          I am a passionate developer with a strong focus on creating scalable, 
+          user-friendly applications. My expertise lies in full-stack development, 
+          leveraging modern frameworks and technologies to build efficient solutions.
+        </p>
+        <p>
+          With a background in AI & ML, I love integrating intelligent systems into 
+          practical software. My goal is to bridge innovation and usability in every project.
+        </p>
+        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="cv-btn">View CV</a>
       </section>
 
-      {/* Education Section */}
+      {/* ✅ Education */}
       <section className="education">
         <h2>Education</h2>
-        <div className="edu-grid">
-          <div className="edu-card">
-            <img src="/images/st-francis-logo.jpeg" alt="College" />
-            <div className="edu-overlay">
-              <p className="year">2021 - 2025</p>
-              <p>B.Tech in CSE (AI & ML)</p>
-              <p className="grade">Grade: 8.7 CGPA</p>
-            </div>
+        <div className="edu-card">
+          <img src="/st-francis-logo.jpeg" alt="BTech" />
+          <div className="overlay">
+            <p>B.Tech CSE (AI & ML)</p>
+            <p>2021 - 2025 | 8.6 CGPA</p>
           </div>
-          <div className="edu-card">
-            <img src="/images/st-martins-logo.jpeg" alt="Intermediate" />
-            <div className="edu-overlay">
-              <p className="year">2019 - 2021</p>
-              <p>Intermediate MPC</p>
-              <p className="grade">Grade: 95%</p>
-            </div>
+        </div>
+        <div className="edu-card">
+          <img src="/st-martins-logo.jpeg" alt="Intermediate" />
+          <div className="overlay">
+            <p>Intermediate MPC</p>
+            <p>2019 - 2021 | 94%</p>
           </div>
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* ✅ Projects */}
       <section className="projects">
         <h2>Projects</h2>
 
         {/* College Companion */}
         <div className="project-card">
-          <img src="/images/college-companion.jpeg" alt="College Companion" />
+          <img src="/college-companion.jpeg" alt="College Companion" />
           <div className="project-overlay">
-            <div className="ats-points">
-              <p>📌 Full-stack app for student resource management</p>
-              <p>📌 Real-time updates with Firebase</p>
-              <p>📌 Clean UI with responsive design</p>
+            <div className="project-points">
+              <p>📌 Built a full-stack platform for students to manage academic resources efficiently.</p>
+              <p>📌 Integrated real-time collaboration and secure authentication.</p>
+              <p>📌 Responsive UI for seamless usage across devices.</p>
             </div>
             <div className="project-links">
               <a href="https://college-companion-by-imad.netlify.app/" target="_blank" rel="noreferrer" className="live-demo">🚀 Live Demo</a>
-              <a href="https://github.com/mohammed-imad-umar/college-companion" target="_blank" rel="noreferrer" className="github-link">GitHub</a>
+              <a href="https://github.com/mohammed-imad-umar/college-companion" target="_blank" rel="noreferrer" className="github-badge">GitHub</a>
             </div>
           </div>
         </div>
 
         {/* Electronic Signature */}
         <div className="project-card">
-          <img src="/images/electronic-signature.png" alt="Electronic Signature" />
+          <img src="/electronic-signature.png" alt="Electronic Signature" />
           <div className="project-overlay">
-            <div className="ats-points">
-              <p>📌 Digital signature creation & verification</p>
-              <p>📌 Secure hash algorithms for integrity</p>
-              <p>📌 Simple & clean UI</p>
+            <div className="project-points">
+              <p>📌 Developed a secure electronic signature platform.</p>
+              <p>📌 Integrated encryption for signature authenticity.</p>
+              <p>📌 Designed for businesses to streamline document signing.</p>
             </div>
             <div className="project-links">
-              <a href="https://github.com/mohammed-imad-umar/Electronic_Signature-" target="_blank" rel="noreferrer" className="github-link">GitHub</a>
-              <a href="#" target="_blank" rel="noreferrer" className="live-demo">🚀 Live Demo</a>
+              <a href="https://github.com/mohammed-imad-umar/Electronic_Signature-" target="_blank" rel="noreferrer" className="github-badge">GitHub</a>
             </div>
           </div>
         </div>
 
-        {/* Smart Parking System */}
+        {/* Smart Parking */}
         <div className="project-card">
-          <img src="/images/smart-parking-project.png" alt="Smart Parking" />
+          <img src="/smart-parking-project.png" alt="Smart Parking" />
           <div className="project-overlay">
-            <div className="ats-points">
-              <p>📌 IoT-enabled smart parking solution</p>
-              <p>📌 Real-time slot detection</p>
-              <p>📌 Integrated mobile app</p>
+            <div className="project-points">
+              <p>📌 Created an IoT-based smart parking solution with real-time slot tracking.</p>
+              <p>📌 Backend built with Node.js, frontend optimized for mobile.</p>
             </div>
             <div className="project-links">
-              <a href="https://github.com/mohammed-imad-umar/smart-parking-system" target="_blank" rel="noreferrer" className="github-link">GitHub</a>
+              <a href="https://github.com/mohammed-imad-umar/smart-parking-system" target="_blank" rel="noreferrer" className="github-badge">GitHub</a>
             </div>
           </div>
         </div>
 
         {/* Detecting Twitter Bots */}
         <div className="project-card">
-          <img src="/images/twitter-bots-project.png" alt="Twitter Bots" />
+          <img src="/twitter-bots-project.png" alt="Twitter Bots" />
           <div className="project-overlay">
-            <div className="ats-points">
-              <p>📌 Machine learning model to detect bots</p>
-              <p>📌 Feature engineering for accuracy</p>
-              <p>📌 Detailed analytics dashboard</p>
+            <div className="project-points">
+              <p>📌 Developed ML model to identify Twitter bots based on user behavior.</p>
+              <p>📌 Utilized Python, Scikit-learn, and Flask for deployment.</p>
             </div>
             <div className="project-links">
-              <a href="https://github.com/mohammed-imad-umar/detecting-twitter-bots" target="_blank" rel="noreferrer" className="github-link">GitHub</a>
+              <a href="https://github.com/mohammed-imad-umar/detecting-twitter-bots" target="_blank" rel="noreferrer" className="github-badge">GitHub</a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* ✅ Contact */}
       <section className="contact">
         <h2>Contact</h2>
-        <p>📧 imadu1525@gmail.com</p>
-        <p>📱 8919023402</p>
+        <p>📧 Email: <a href="mailto:imadu1525@gmail.com">imadu1525@gmail.com</a></p>
+        <p>📞 Phone: <a href="tel:8919023402">8919023402</a></p>
       </section>
 
       <footer>
