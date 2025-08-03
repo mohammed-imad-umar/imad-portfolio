@@ -1,4 +1,4 @@
-// [START OF FILE]
+// App.js
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
@@ -167,11 +167,7 @@ function App() {
           <section className="projects">
             <h2>Projects</h2>
             <div className="project">
-              <img
-                src={`${process.env.PUBLIC_URL}/images/twitter-bots-project.png`}
-                alt="Twitter Bot"
-                onClick={() => openModal(`${process.env.PUBLIC_URL}/images/twitter-bots-project.png`)}
-              />
+              <img src={`${process.env.PUBLIC_URL}/images/twitter-bots-project.png`} alt="Twitter Bot" onClick={() => openModal(`${process.env.PUBLIC_URL}/images/twitter-bots-project.png`)} />
               <h3>Detecting Twitter Bots</h3>
               <p>
                 Built a machine learning model to identify bot accounts on Twitter using behavioral data.
@@ -180,11 +176,7 @@ function App() {
               </p>
             </div>
             <div className="project">
-              <img
-                src={`${process.env.PUBLIC_URL}/images/smart-parking-project.png`}
-                alt="Smart Parking"
-                onClick={() => openModal(`${process.env.PUBLIC_URL}/images/smart-parking-project.png`)}
-              />
+              <img src={`${process.env.PUBLIC_URL}/images/smart-parking-project.png`} alt="Smart Parking" onClick={() => openModal(`${process.env.PUBLIC_URL}/images/smart-parking-project.png`)} />
               <h3>IoT Smart Parking System</h3>
               <p>
                 Developed an IoT-based smart parking system using NodeMCU and IR sensors.
@@ -193,27 +185,19 @@ function App() {
               </p>
             </div>
             <div className="project">
-              <img
-                src={`${process.env.PUBLIC_URL}/images/college-companion.jpeg`}
-                alt="College Companion"
-                onClick={() => openModal(`${process.env.PUBLIC_URL}/images/college-companion.jpeg`)}
-              />
+              <img src={`${process.env.PUBLIC_URL}/images/college-companion.jpeg`} alt="College Companion" onClick={() => openModal(`${process.env.PUBLIC_URL}/images/college-companion.jpeg`)} />
               <h3>College Companion</h3>
               <p>
-                A web app for students to manage schedules, notes, and assignments in one place.
-                Helps organize college life with ease and productivity.
+                A student-friendly platform to manage assignments, events, and resources in one place.
+                Helps in improving productivity and collaboration among students.
               </p>
             </div>
             <div className="project">
-              <img
-                src={`${process.env.PUBLIC_URL}/images/electronic-signature.png`}
-                alt="Electronic Signature"
-                onClick={() => openModal(`${process.env.PUBLIC_URL}/images/electronic-signature.png`)}
-              />
+              <img src={`${process.env.PUBLIC_URL}/images/electronic-signature.png`} alt="Electronic Signature" onClick={() => openModal(`${process.env.PUBLIC_URL}/images/electronic-signature.png`)} />
               <h3>Electronic Signature</h3>
               <p>
-                A tool to draw and download digital signatures for official documents.
-                Provides a convenient way to generate and share e-signatures online.
+                Created a tool to draw, save, and download digital signatures easily.
+                Designed to be simple and efficient for official use cases.
               </p>
             </div>
           </section>
@@ -251,4 +235,3 @@ function App() {
 }
 
 export default App;
-// [END OF FILE]
