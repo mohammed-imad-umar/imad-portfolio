@@ -7,7 +7,7 @@ function App() {
   const [modalPoints, setModalPoints] = useState([]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 2500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -29,7 +29,7 @@ function App() {
           {modalImg && (
             <div className="modal" onClick={() => setModalImg(null)}>
               <img src={modalImg} alt="Enlarged" className="modal-content" />
-              <div className="modal-points glass">
+              <div className="modal-points">
                 {modalPoints.map((point, i) => (
                   <p key={i} className="point" style={{ animationDelay: `${i * 0.4}s` }}>
                     {point}
@@ -55,12 +55,10 @@ function App() {
             />
             <h2>About Me</h2>
             <p>
-              Hi! I'm Mohammed Imad Umar, a passionate Computer Science and Engineering (AI & ML)
-              student who loves building practical, impactful tech solutions. With hands-on
-              experience in Java, Python, web technologies, and databases, I enjoy solving real-world
-              problems through coding. I believe in writing clean, efficient code and creating
-              user-friendly applications that make a difference. My interests lie in AI, full-stack
-              development, and innovative projects that bridge technology with everyday life.
+              A passionate CSE (AI & ML) student with a knack for solving complex problems
+              through efficient code and intuitive design. I love working on real-world
+              projects, blending creativity with technical expertise to craft meaningful
+              solutions. Constantly learning and improving to become a top-notch developer.
             </p>
           </section>
 
@@ -99,25 +97,6 @@ function App() {
           {/* Projects */}
           <section className="projects">
             <h2>Projects</h2>
-
-            {/* ✅ College Companion */}
-            <div
-              className="project-card"
-              onClick={() =>
-                openModal("/images/college-companion.jpeg", [
-                  "Integrated assignment tracker and CGPA calculator",
-                  "Built dynamic notes & syllabus management system",
-                  "Optimized dashboard for seamless student workflow"
-                ])
-              }
-            >
-              <img src="/images/college-companion.jpeg" alt="College Companion" className="thumb"/>
-              <h3>College Companion</h3>
-              <a href="https://github.com/mohammed-imad-umar/college-companion"
-                 target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
-              <a href="https://college-companion-by-imad.netlify.app/"
-                 target="_blank" rel="noreferrer" className="live-demo">🚀 Live Demo</a>
-            </div>
 
             <div
               className="project-card"
