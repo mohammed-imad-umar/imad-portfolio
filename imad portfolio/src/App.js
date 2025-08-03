@@ -3,200 +3,179 @@ import "./App.css";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [modalImg, setModalImg] = useState(null);
-  const [modalPoints, setModalPoints] = useState([]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 2500);
     return () => clearTimeout(timer);
   }, []);
 
-  const openModal = (img, points = []) => {
-    setModalImg(img);
-    setModalPoints(points);
-  };
+  if (loading) {
+    return (
+      <div className="loader">
+        <div className="loader-circle blink">
+          <img
+            src="/images/profile-photo.jpeg"
+            alt="Profile"
+            className="loader-img"
+          />
+        </div>
+        <p className="loader-text blink">Loading...</p>
+      </div>
+    );
+  }
 
   return (
-    <>
-      {loading ? (
-        <div className="loader">
-          <div className="loader-circle">
-            <img
-              src={`${process.env.PUBLIC_URL}/images/profile-photo.jpeg`}
-              alt="Profile"
-              className="loader-img blink"
-            />
-          </div>
-          <p className="loader-text">Imad's Portfolio Loading...</p>
-        </div>
-      ) : (
-        <div className="app">
-
-          {/* Landing Section */}
-          <section
-            className="landing"
-            style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/images/profile-photo.jpeg)`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              position: "relative",
-              filter: "blur(2px)",
-            }}
-          >
-            <div className="landing-overlay">
-              <div className="landing-text">
-                <h1>Hello, I'm Mohammed Imad Umar</h1>
-                <p>A passionate AI & ML enthusiast building impactful tech.</p>
-                <div className="landing-links">
-                  <a href="https://github.com/mohammed-imad-umar" target="_blank" rel="noopener noreferrer">
-                    <img src={`${process.env.PUBLIC_URL}/images/github-logo.jpeg`} alt="GitHub" />
-                  </a>
-                  <a href="https://www.linkedin.com/in/mohammed-imad-umar-215a682a8" target="_blank" rel="noopener noreferrer">
-                    <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.jpeg`} alt="LinkedIn" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* About Me Section */}
-          <section className="about">
-            <h2>About Me</h2>
-            <img
-              src={`${process.env.PUBLIC_URL}/images/cover.jpeg`}
-              alt="Cover"
-              className="about-cover"
-            />
-            <p>
-              I'm a Computer Science student specializing in Artificial Intelligence and
-              Machine Learning at St. Martin's Engineering College. I love building tech that
-              solves real problems, with a balance of functionality and user experience.
-            </p>
-            <p>
-              My projects include a Twitter bot detector, IoT-based smart parking, and student
-              companion platforms. I'm always curious about AI innovations and strive to create
-              scalable and efficient solutions that leave a positive impact.
-            </p>
-            <a
-              href={`${process.env.PUBLIC_URL}/resume.pdf`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cv-btn"
-            >
-              View CV
+    <div className="app">
+      {/* Hero Section */}
+      <section className="hero">
+        <img
+          src="/images/profile-photo.jpeg"
+          alt="Profile"
+          className="hero-bg"
+        />
+        <div className="hero-content">
+          <h1>Hello, I am <span>Imad Umar</span></h1>
+          <p className="tagline">A passionate developer crafting intelligent solutions</p>
+          <div className="social-links">
+            <a href="https://github.com/mohammed-imad-umar" target="_blank" rel="noreferrer">
+              <img src="/images/github-logo.jpeg" alt="GitHub" />
             </a>
-          </section>
-
-          {/* Education Section */}
-          <section className="education">
-            <h2>Education</h2>
-            <div className="edu-item" onClick={() => openModal(`${process.env.PUBLIC_URL}/images/btech.jpeg`, ["B.Tech – Computer Science (AI & ML)", "2021 - 2025", "St. Martin’s Engineering College"])}>
-              <img src={`${process.env.PUBLIC_URL}/images/btech.jpeg`} alt="BTech" />
-              <div><h3>B.Tech – CSE (AI & ML)</h3><p>2021 - 2025</p></div>
-            </div>
-            <div className="edu-item" onClick={() => openModal(`${process.env.PUBLIC_URL}/images/inter.jpeg`, ["Intermediate MPC", "2019 - 2021", "Sri Chaitanya Jr. College"])}>
-              <img src={`${process.env.PUBLIC_URL}/images/inter.jpeg`} alt="Intermediate" />
-              <div><h3>Intermediate (MPC)</h3><p>2019 - 2021</p></div>
-            </div>
-            <div className="edu-item" onClick={() => openModal(`${process.env.PUBLIC_URL}/images/school.jpeg`, ["10th Grade – GPA 10.0", "2018 - 2019", "St. Francis De Sales High School"])}>
-              <img src={`${process.env.PUBLIC_URL}/images/school.jpeg`} alt="School" />
-              <div><h3>10th Grade</h3><p>2018 - 2019</p></div>
-            </div>
-          </section>
-
-          {/* Skills */}
-          <section className="skills">
-            <h2>Skills</h2>
-            <ul>
-              <li>Java</li>
-              <li>Python</li>
-              <li>HTML, CSS, JavaScript</li>
-              <li>React.js</li>
-              <li>MySQL</li>
-              <li>Git & GitHub</li>
-            </ul>
-          </section>
-
-          {/* Projects */}
-          <section className="projects">
-            <h2>Projects</h2>
-            <div className="project" onClick={() => openModal(`${process.env.PUBLIC_URL}/images/twitter-bots-project.png`, [
-              "Built ML model to detect bot accounts on Twitter",
-              "Integrated classification metrics",
-              "Deployed with an intuitive UI"
-            ])}>
-              <img src={`${process.env.PUBLIC_URL}/images/twitter-bots-project.png`} alt="Twitter Bot" />
-              <h3>Detecting Twitter Bots</h3>
-              <div className="project-links">
-                <a href="https://github.com/mohammed-imad-umar/twitter-bots" target="_blank" rel="noopener noreferrer">GitHub</a>
-              </div>
-            </div>
-
-            <div className="project" onClick={() => openModal(`${process.env.PUBLIC_URL}/images/smart-parking-project.png`, [
-              "IoT-based smart parking system",
-              "Live dashboard to monitor slots",
-              "Optimized urban parking infrastructure"
-            ])}>
-              <img src={`${process.env.PUBLIC_URL}/images/smart-parking-project.png`} alt="Smart Parking" />
-              <h3>Smart Parking System</h3>
-              <div className="project-links">
-                <a href="https://github.com/mohammed-imad-umar/smart-parking" target="_blank" rel="noopener noreferrer">GitHub</a>
-              </div>
-            </div>
-
-            <div className="project" onClick={() => openModal(`${process.env.PUBLIC_URL}/images/college-companion.jpeg`, [
-              "Full-stack + Android app for student life management",
-              "Real-time updates and notifications",
-              "Deployed with Netlify & Firebase"
-            ])}>
-              <img src={`${process.env.PUBLIC_URL}/images/college-companion.jpeg`} alt="College Companion" />
-              <h3>College Companion</h3>
-              <div className="project-links">
-                <a href="https://college-companion.netlify.app" target="_blank" rel="noopener noreferrer">Live Demo</a>
-              </div>
-            </div>
-
-            <div className="project" onClick={() => openModal(`${process.env.PUBLIC_URL}/images/electronic-signature.png`, [
-              "Digital signature verification system",
-              "Implemented secure signing algorithms",
-              "User-friendly web UI"
-            ])}>
-              <img src={`${process.env.PUBLIC_URL}/images/electronic-signature.png`} alt="Electronic Signature" />
-              <h3>Electronic Signature</h3>
-            </div>
-          </section>
-
-          {/* Contact Section */}
-          <section className="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:imadu1525@gmail.com">imadu1525@gmail.com</a></p>
-            <p>Phone: 8919023402</p>
-          </section>
-
-          {/* Footer */}
-          <footer className="footer">
-            <p>&copy; 2025 Mohammed Imad Umar. All rights reserved.</p>
-          </footer>
-
-          {/* Modal */}
-          {modalImg && (
-            <div className="modal" onClick={() => setModalImg(null)}>
-              <div className="modal-content">
-                <img src={modalImg} alt="Modal" />
-                {modalPoints.length > 0 && (
-                  <ul className="modal-points">
-                    {modalPoints.map((point, index) => (
-                      <li key={index}>{point}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
-          )}
-
+            <a href="https://linkedin.com/in/mohammed-imad-umar" target="_blank" rel="noreferrer">
+              <img src="/images/linkedin-logo.jpeg" alt="LinkedIn" />
+            </a>
+          </div>
         </div>
-      )}
-    </>
+      </section>
+
+      {/* About Section */}
+      <section className="about">
+        <img src="/images/cover.jpeg" alt="Cover" className="cover-photo" />
+        <div className="about-text">
+          <h2>About Me</h2>
+          <p>
+            I am a Computer Science student specializing in AI & ML, with a strong passion
+            for developing intelligent and user-centric solutions. My expertise lies in
+            full-stack development and machine learning, focusing on building scalable
+            and impactful applications.
+          </p>
+          <p>
+            Alongside my academic journey, I have worked on multiple real-world projects,
+            honing my skills in problem-solving, data structures, and clean software
+            architecture. I aim to combine creativity with technology to deliver premium
+            digital experiences.
+          </p>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cv-btn"
+          >
+            View CV
+          </a>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section className="education">
+        <h2>Education</h2>
+        <div className="edu-grid">
+          <div className="edu-card">
+            <img src="/images/st-francis-logo.jpeg" alt="College" />
+            <div className="edu-overlay">
+              <p className="year">2021 - 2025</p>
+              <p>B.Tech in CSE (AI & ML)</p>
+              <p className="grade">Grade: 8.7 CGPA</p>
+            </div>
+          </div>
+          <div className="edu-card">
+            <img src="/images/st-martins-logo.jpeg" alt="Intermediate" />
+            <div className="edu-overlay">
+              <p className="year">2019 - 2021</p>
+              <p>Intermediate MPC</p>
+              <p className="grade">Grade: 95%</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section className="projects">
+        <h2>Projects</h2>
+
+        {/* College Companion */}
+        <div className="project-card">
+          <img src="/images/college-companion.jpeg" alt="College Companion" />
+          <div className="project-overlay">
+            <div className="ats-points">
+              <p>📌 Full-stack app for student resource management</p>
+              <p>📌 Real-time updates with Firebase</p>
+              <p>📌 Clean UI with responsive design</p>
+            </div>
+            <div className="project-links">
+              <a href="https://college-companion-by-imad.netlify.app/" target="_blank" rel="noreferrer" className="live-demo">🚀 Live Demo</a>
+              <a href="https://github.com/mohammed-imad-umar/college-companion" target="_blank" rel="noreferrer" className="github-link">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        {/* Electronic Signature */}
+        <div className="project-card">
+          <img src="/images/electronic-signature.png" alt="Electronic Signature" />
+          <div className="project-overlay">
+            <div className="ats-points">
+              <p>📌 Digital signature creation & verification</p>
+              <p>📌 Secure hash algorithms for integrity</p>
+              <p>📌 Simple & clean UI</p>
+            </div>
+            <div className="project-links">
+              <a href="https://github.com/mohammed-imad-umar/Electronic_Signature-" target="_blank" rel="noreferrer" className="github-link">GitHub</a>
+              <a href="#" target="_blank" rel="noreferrer" className="live-demo">🚀 Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        {/* Smart Parking System */}
+        <div className="project-card">
+          <img src="/images/smart-parking-project.png" alt="Smart Parking" />
+          <div className="project-overlay">
+            <div className="ats-points">
+              <p>📌 IoT-enabled smart parking solution</p>
+              <p>📌 Real-time slot detection</p>
+              <p>📌 Integrated mobile app</p>
+            </div>
+            <div className="project-links">
+              <a href="https://github.com/mohammed-imad-umar/smart-parking-system" target="_blank" rel="noreferrer" className="github-link">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        {/* Detecting Twitter Bots */}
+        <div className="project-card">
+          <img src="/images/twitter-bots-project.png" alt="Twitter Bots" />
+          <div className="project-overlay">
+            <div className="ats-points">
+              <p>📌 Machine learning model to detect bots</p>
+              <p>📌 Feature engineering for accuracy</p>
+              <p>📌 Detailed analytics dashboard</p>
+            </div>
+            <div className="project-links">
+              <a href="https://github.com/mohammed-imad-umar/detecting-twitter-bots" target="_blank" rel="noreferrer" className="github-link">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="contact">
+        <h2>Contact</h2>
+        <p>📧 imadu1525@gmail.com</p>
+        <p>📱 8919023402</p>
+      </section>
+
+      <footer>
+        <p>© 2025 Imad Umar. All rights reserved.</p>
+      </footer>
+    </div>
   );
 }
 
