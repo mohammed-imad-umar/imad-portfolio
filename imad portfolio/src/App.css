@@ -1,77 +1,58 @@
-/* ---------- GENERAL ---------- */
-body {
+/* General Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Poppins', sans-serif;
-  background-color: #0d0d0d;
+  background-color: #0e0e0e;
   color: #fff;
 }
 
-.app {
-  padding: 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-/* ---------- LOADER ---------- */
+/* Loader */
 .loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0e0e0e;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: #0d0d0d;
 }
 
 .loader-img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   margin-bottom: 20px;
-  animation: pulse 2s infinite ease-in-out;
 }
 
 .loader-text {
-  font-size: 1.3rem;
-  color: #00ffc3;
+  color: #fff;
+  font-size: 1.2rem;
   font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid #00ffc3;
-  width: 0;
-  animation: typing 2s steps(30, end) forwards;
+  animation: blink 1.2s infinite;
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 250px; }
+@keyframes blink {
+  50% { opacity: 0.5; }
 }
 
-@keyframes pulse {
-  0% { transform: scale(0.95); opacity: 0.8; }
-  50% { transform: scale(1); opacity: 1; }
-  100% { transform: scale(0.95); opacity: 0.8; }
-}
-
-/* ---------- HEADER ---------- */
+/* Header */
 .header {
   text-align: center;
-  margin-bottom: 40px;
+  padding: 20px;
 }
 
-.header h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  color: #00ffc3;
-}
-
-.header p {
-  color: #aaa;
-}
-
-/* ---------- ABOUT ---------- */
+/* About */
 .about {
   text-align: center;
-  margin-bottom: 50px;
+  padding: 20px;
 }
 
 .profile-img {
@@ -79,167 +60,108 @@ body {
   height: 140px;
   border-radius: 50%;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
 }
-
 .profile-img:hover {
   transform: scale(1.05);
 }
 
-/* ---------- EDUCATION ---------- */
-.education {
-  margin-bottom: 50px;
-}
-
-.edu-card {
+/* Education & Projects */
+.edu-card, .project-card {
   background: #1a1a1a;
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px;
   border-radius: 12px;
-  display: flex;
-  align-items: center;
+  text-align: center;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
-
-.edu-card:hover {
+.edu-card:hover, .project-card:hover {
   transform: scale(1.02);
 }
 
 .thumb {
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
-  margin-right: 15px;
-}
-
-/* ---------- SKILLS ---------- */
-.skills {
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-.badges {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-}
-
-.badge {
-  padding: 6px 12px;
-  background: #222;
-  border-radius: 20px;
-  color: #00ffc3;
-  font-size: 0.85rem;
-}
-
-.badge.clickable:hover {
-  background: #00ffc3;
-  color: #000;
-}
-
-/* ---------- PROJECTS ---------- */
-.projects {
-  margin-bottom: 50px;
-}
-
-.project-card {
-  background: #1a1a1a;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-  transform: scale(1.02);
-}
-
-.project-card img.thumb {
   width: 100%;
-  border-radius: 12px;
-}
-
-.link-btn, .live-demo {
-  display: inline-block;
-  margin: 8px 5px 0;
-  padding: 6px 12px;
-  background: #00ffc3;
-  color: #000;
   border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
-  transition: background 0.3s ease;
+  object-fit: cover;
 }
 
-.link-btn:hover, .live-demo:hover {
-  background: #00cc9a;
-}
-
-/* ---------- MODAL ---------- */
+/* Modal */
 .modal {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0,0,0,0.85);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
-  animation: fadeIn 0.3s ease;
+  z-index: 1000;
+  flex-direction: column;
 }
 
 .modal-content {
   max-width: 80%;
-  max-height: 80%;
+  max-height: 60%;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  margin-bottom: 15px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; } to { opacity: 1; }
-}
-
-.modal-points {
-  position: absolute;
-  color: white;
-  font-weight: 700;
-  font-size: 1rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* ATS Points Box */
+.modal-points-box {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
   text-align: center;
+  max-width: 70%;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .point {
-  margin: 8px 0;
-  background: linear-gradient(90deg, #00ffc3, #00aaff);
+  margin: 6px 0;
+  font-size: 0.95rem;
+  background: linear-gradient(to right, #ffffff, #dcdcdc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  opacity: 0;
-  animation: slideIn 0.6s forwards;
 }
 
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(15px); }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ---------- CONTACT ---------- */
-.contact {
-  text-align: center;
-  margin-bottom: 50px;
+/* Badges */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-/* ---------- FOOTER ---------- */
+.badge, .link-btn, .live-demo {
+  background: #222;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.badge:hover, .link-btn:hover, .live-demo:hover {
+  background: #444;
+}
+
+/* Footer */
 .footer {
   text-align: center;
-  color: #555;
-  padding: 20px 0;
-  font-size: 0.9rem;
+  padding: 15px;
+  font-size: 0.85rem;
+  color: #888;
 }
