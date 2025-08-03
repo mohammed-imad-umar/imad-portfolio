@@ -7,7 +7,7 @@ function App() {
   const [modalPoints, setModalPoints] = useState([]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2500);
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -29,7 +29,7 @@ function App() {
           {modalImg && (
             <div className="modal" onClick={() => setModalImg(null)}>
               <img src={modalImg} alt="Enlarged" className="modal-content" />
-              <div className="modal-points">
+              <div className="modal-points-box">
                 {modalPoints.map((point, i) => (
                   <p key={i} className="point" style={{ animationDelay: `${i * 0.4}s` }}>
                     {point}
@@ -55,10 +55,7 @@ function App() {
             />
             <h2>About Me</h2>
             <p>
-              A passionate CSE (AI & ML) student with a knack for solving complex problems
-              through efficient code and intuitive design. I love working on real-world
-              projects, blending creativity with technical expertise to craft meaningful
-              solutions. Constantly learning and improving to become a top-notch developer.
+              I'm a passionate Computer Science & Engineering (AI & ML) student who loves building intelligent solutions. With hands-on experience in Java, Python, web development, and databases, I aim to create impactful, scalable applications that merge innovation with simplicity.
             </p>
           </section>
 
@@ -102,9 +99,9 @@ function App() {
               className="project-card"
               onClick={() =>
                 openModal("/images/twitter-bots-project.png", [
-                  "Built ML model with 74% accuracy to classify bots",
-                  "Implemented NLP & tweet-frequency features",
-                  "Developed Tkinter GUI for real-time predictions"
+                  "ML model with 74% accuracy to detect bots",
+                  "NLP & tweet-frequency-based features",
+                  "Tkinter GUI for real-time predictions"
                 ])
               }
             >
@@ -118,9 +115,9 @@ function App() {
               className="project-card"
               onClick={() =>
                 openModal("/images/smart-parking-project.png", [
-                  "IoT-based parking system with Android + Node.js",
-                  "Integrated GPS & sensors to reduce search time by 40%",
-                  "Built secure REST APIs for authentication & payments"
+                  "IoT-based parking with Android + Node.js",
+                  "Reduced parking search time by 40%",
+                  "Secure REST APIs for payments"
                 ])
               }
             >
@@ -135,8 +132,8 @@ function App() {
               onClick={() =>
                 openModal("/images/electronic-signature.png", [
                   "Lightweight web-based signature app",
-                  "Built with HTML, CSS, and JavaScript",
-                  "Download digital signature as image"
+                  "Built with HTML, CSS, and JS",
+                  "Download signatures as images"
                 ])
               }
             >
@@ -145,6 +142,24 @@ function App() {
               <a href="https://github.com/mohammed-imad-umar/Electronic_Signature-"
                  target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
               <a href="https://electronic-signature.netlify.app/"
+                 target="_blank" rel="noreferrer" className="live-demo">🚀 Live Demo</a>
+            </div>
+
+            <div
+              className="project-card"
+              onClick={() =>
+                openModal("/images/college-companion.jpeg", [
+                  "All-in-one student productivity dashboard",
+                  "Integrated attendance, notes, and CGPA tools",
+                  "Real-time responsive UI for seamless access"
+                ])
+              }
+            >
+              <img src="/images/college-companion.jpeg" alt="College Companion" className="thumb"/>
+              <h3>College Companion</h3>
+              <a href="https://github.com/mohammed-imad-umar/college-companion"
+                 target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
+              <a href="https://college-companion-by-imad.netlify.app/"
                  target="_blank" rel="noreferrer" className="live-demo">🚀 Live Demo</a>
             </div>
           </section>
