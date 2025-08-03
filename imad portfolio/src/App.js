@@ -20,7 +20,7 @@ function App() {
     <>
       {loading ? (
         <div className="loader">
-          <img src="/images/profile-photo.jpeg" alt="Profile" className="loader-img" />
+          <img src="/images/profile-photo.jpeg" alt="Profile" className="loader-img blink" />
           <p className="loader-text">Imad's Portfolio Loading...</p>
         </div>
       ) : (
@@ -31,7 +31,7 @@ function App() {
               <img src={modalImg} alt="Enlarged" className="modal-content" />
               <div className="modal-points">
                 {modalPoints.map((point, i) => (
-                  <p key={i} className="point" style={{ animationDelay: `${i * 0.5}s` }}>
+                  <p key={i} className="point" style={{ animationDelay: `${i * 0.4}s` }}>
                     {point}
                   </p>
                 ))}
@@ -55,9 +55,8 @@ function App() {
             />
             <h2>About Me</h2>
             <p>
-              A passionate AI & ML engineering student who loves solving complex problems
-              and building efficient solutions using cutting-edge technologies. Skilled in
-              Java, Python, and full-stack development with a keen eye for detail and design.
+              A passionate AI & ML engineering student who loves building smart solutions. Skilled in Java,
+              Python, web tech & problem-solving, focused on creating real-world impactful applications.
             </p>
           </section>
 
@@ -97,6 +96,25 @@ function App() {
           <section className="projects">
             <h2>Projects</h2>
 
+            {/* ✅ College Companion */}
+            <div
+              className="project-card"
+              onClick={() =>
+                openModal("/images/college-companion.jpeg", [
+                  "Centralized dashboard for college resources",
+                  "Integrated tools: Notes, Timetable, CGPA Calculator",
+                  "Boosted student productivity with intuitive UI"
+                ])
+              }
+            >
+              <img src="/images/college-companion.jpeg" alt="College Companion" className="thumb"/>
+              <h3>College Companion</h3>
+              <a href="https://github.com/mohammed-imad-umar/college-companion"
+                 target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
+              <a href="https://college-companion-by-imad.netlify.app/"
+                 target="_blank" rel="noreferrer" className="live-demo">🚀 Live Demo</a>
+            </div>
+
             <div
               className="project-card"
               onClick={() =>
@@ -110,7 +128,7 @@ function App() {
               <img src="/images/twitter-bots-project.png" alt="Twitter Bots" className="thumb"/>
               <h3>Detecting Malicious Twitter Bots</h3>
               <a href="https://github.com/mohammed-imad-umar/detecting-twitter-bots"
-                 target="_blank" rel="noreferrer" className="link-btn glow">GitHub Link</a>
+                 target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
             </div>
 
             <div
@@ -126,7 +144,7 @@ function App() {
               <img src="/images/smart-parking-project.png" alt="Smart Parking" className="thumb"/>
               <h3>Smart Parking System</h3>
               <a href="https://github.com/mohammed-imad-umar/smart-parking-system"
-                 target="_blank" rel="noreferrer" className="link-btn glow">GitHub Link</a>
+                 target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
             </div>
 
             <div
@@ -142,9 +160,9 @@ function App() {
               <img src="/images/electronic-signature.png" alt="Electronic Signature" className="thumb"/>
               <h3>Electronic Signature App</h3>
               <a href="https://github.com/mohammed-imad-umar/Electronic_Signature-"
-                 target="_blank" rel="noreferrer" className="link-btn glow">GitHub Link</a>
+                 target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
               <a href="https://electronic-signature.netlify.app/"
-                 target="_blank" rel="noreferrer" className="live-demo glow">🚀 Live Demo</a>
+                 target="_blank" rel="noreferrer" className="live-demo">🚀 Live Demo</a>
             </div>
           </section>
 
@@ -152,11 +170,21 @@ function App() {
           <section className="contact">
             <h2>Get in Touch</h2>
             <div className="badges">
-              <a href="https://www.linkedin.com/in/mohammed-imad-umar/" target="_blank" rel="noreferrer" className="badge contact-badge">LinkedIn</a>
-              <a href="https://leetcode.com/mohammed_imad_umar" target="_blank" rel="noreferrer" className="badge contact-badge">LeetCode</a>
-              <a href="https://github.com/mohammed-imad-umar" target="_blank" rel="noreferrer" className="badge contact-badge">GitHub</a>
-              <a href="mailto:imadu1525@gmail.com" className="badge contact-badge">Email</a>
-              <a href="/images/resume.pdf" target="_blank" rel="noreferrer" className="badge contact-badge">Resume</a>
+              <a href="https://linkedin.com/in/mohammed-imad-umar" target="_blank" rel="noreferrer" className="contact-btn linkedin">
+                <i className="fab fa-linkedin"></i> LinkedIn
+              </a>
+              <a href="https://leetcode.com/mohammed_imad_umar" target="_blank" rel="noreferrer" className="contact-btn leetcode">
+                <i className="fas fa-code"></i> LeetCode
+              </a>
+              <a href="https://github.com/mohammed-imad-umar" target="_blank" rel="noreferrer" className="contact-btn github">
+                <i className="fab fa-github"></i> GitHub
+              </a>
+              <a href="mailto:imadu1525@gmail.com" className="contact-btn email">
+                <i className="fas fa-envelope"></i> Email
+              </a>
+              <a href="/images/resume.pdf" target="_blank" rel="noreferrer" className="contact-btn resume">
+                <i className="fas fa-file-alt"></i> Resume
+              </a>
             </div>
           </section>
 
