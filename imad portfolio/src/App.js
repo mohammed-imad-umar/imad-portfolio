@@ -3,18 +3,20 @@ import "./App.css";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [activeEducation, setActiveEducation] = useState(null);
-  const [activeProject, setActiveProject] = useState(null);
+  const [viewProject, setViewProject] = useState(null);
+  const [viewEdu, setViewEdu] = useState(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2500);
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
     return (
       <div className="loader">
-        <img src="/images/profile-photo.jpeg" alt="Loading" className="loader-img blink" />
+        <div className="loader-circle">
+          <img src="/images/profile-photo.jpeg" alt="Profile" className="loader-img blink" />
+        </div>
         <p className="loader-text blink">Loading Portfolio...</p>
       </div>
     );
@@ -22,147 +24,147 @@ function App() {
 
   return (
     <div className="App">
-      {/* Hero Section */}
-      <section className="hero">
-        <img src="/images/profile-photo.jpeg" alt="Profile" className="hero-bg" />
-        <div className="hero-text">
-          <h1>Hello, I'm Imad Umar</h1>
-          <p>Crafting intelligent solutions with AI & modern web technologies.</p>
-          <div className="social-icons">
-            <a href="https://github.com/mohammed-imad-umar" target="_blank" rel="noopener noreferrer">
-              <img src="/images/github-logo.jpeg" alt="GitHub" />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <img src="/images/linkedin-logo.jpeg" alt="LinkedIn" />
-            </a>
+
+      {/* HERO SECTION */}
+      <section className="landing">
+        <div className="hero">
+          <img src="/images/profile-photo.jpeg" alt="Profile" className="hero-img" />
+          <div className="hero-text">
+            <h1>Hello, I'm <span>Imad Umar</span></h1>
+            <p>Crafting efficient solutions with code & innovation.</p>
+            <div className="social-icons">
+              <a href="https://github.com/mohammed-imad-umar" target="_blank" rel="noreferrer">
+                <img src="/images/github-logo.jpeg" alt="GitHub" />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+                <img src="/images/linkedin-logo.jpeg" alt="LinkedIn" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
+      {/* ABOUT */}
       <section className="about">
-        <img src="/images/cover.jpeg" alt="Cover" className="about-cover" />
+        <img src="/images/cover.jpeg" alt="Cover" className="cover-img" />
         <div>
           <h2>About Me</h2>
           <p>
-            I'm a passionate CSE (AI & ML) student focused on building scalable
-            applications and intelligent machine learning systems. I love solving
-            complex problems with simple, elegant solutions.
+            I am a passionate developer with a keen interest in building scalable
+            and innovative solutions. My expertise lies in full-stack development,
+            machine learning, and problem-solving with clean, maintainable code.
           </p>
           <p>
-            My work involves crafting clean, efficient code and designing
-            user-friendly interfaces. Always eager to learn and experiment with
-            new technologies to create impactful projects.
+            With hands-on experience in real-world projects, I focus on writing
+            efficient code and creating user-centric applications. My goal is to
+            blend technology and creativity to craft impactful solutions.
           </p>
-          <a href="/images/resume.pdf" target="_blank" rel="noopener noreferrer" className="cv-btn">
-            View CV
-          </a>
+          <a href="/images/resume.pdf" target="_blank" rel="noreferrer" className="cv-btn">View CV</a>
         </div>
       </section>
 
-      {/* Education Section */}
+      {/* EDUCATION */}
       <section className="education">
         <h2>Education</h2>
-        <div className="edu-card" onClick={() => setActiveEducation(activeEducation === 1 ? null : 1)}>
-          <img src="/images/st-martins-logo.jpeg" alt="BTech" />
-          <div className="edu-info">
-            <h3>B.Tech - CSE (AI & ML) (2021 - 2025)</h3>
-            {activeEducation === 1 && <p className="edu-grade">CGPA: 8.5</p>}
+        <div className="edu-grid">
+
+          <div className="edu-card" onClick={() => setViewEdu(viewEdu === 1 ? null : 1)}>
+            <img src="/images/st-francis-logo.jpeg" alt="BTech" />
+            <h3>B.Tech (CSE-AI/ML)</h3>
+            {viewEdu === 1 && <div className="edu-overlay"><p className="glossy">Grade: 8.5 CGPA</p></div>}
           </div>
-        </div>
-        <div className="edu-card" onClick={() => setActiveEducation(activeEducation === 2 ? null : 2)}>
-          <img src="/images/st-francis-logo.jpeg" alt="Intermediate" />
-          <div className="edu-info">
-            <h3>Intermediate - MPC (2019 - 2021)</h3>
-            {activeEducation === 2 && <p className="edu-grade">Percentage: 94%</p>}
+
+          <div className="edu-card" onClick={() => setViewEdu(viewEdu === 2 ? null : 2)}>
+            <img src="/images/st-martins-logo.jpeg" alt="Intermediate" />
+            <h3>Intermediate</h3>
+            {viewEdu === 2 && <div className="edu-overlay"><p className="glossy">Grade: 92%</p></div>}
           </div>
-        </div>
-        <div className="edu-card" onClick={() => setActiveEducation(activeEducation === 3 ? null : 3)}>
-          <img src="/images/chaitanya-logo.jpeg" alt="School" />
-          <div className="edu-info">
-            <h3>Schooling - SSC (2018 - 2019)</h3>
-            {activeEducation === 3 && <p className="edu-grade">GPA: 9.8</p>}
+
+          <div className="edu-card" onClick={() => setViewEdu(viewEdu === 3 ? null : 3)}>
+            <img src="/images/chaitanya-logo.jpeg" alt="School" />
+            <h3>School</h3>
+            {viewEdu === 3 && <div className="edu-overlay"><p className="glossy">Grade: 9.8 GPA</p></div>}
           </div>
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* PROJECTS */}
       <section className="projects">
         <h2>Projects</h2>
+        <div className="proj-grid">
 
-        {/* College Companion */}
-        <div className="project-card" onClick={() => setActiveProject(activeProject === 1 ? null : 1)}>
-          <img src="/images/college-companion.jpeg" alt="College Companion" />
-          <h3>College Companion</h3>
-          <div className="badges">
-            <a href="https://college-companion-by-imad.netlify.app/" target="_blank" className="live-demo">🚀 Live Demo</a>
-            <a href="https://github.com/mohammed-imad-umar/college-companion" target="_blank" className="github-badge">GitHub</a>
-          </div>
-          {activeProject === 1 && (
-            <div className="project-points">
-              <p>📌 Smart academic companion with interactive dashboard.</p>
-              <p>📌 Integrated student resource management.</p>
+          <div className="proj-card" onClick={() => setViewProject(viewProject === 1 ? null : 1)}>
+            <img src="/images/college-companion.jpeg" alt="College Companion" />
+            <h3>College Companion</h3>
+            <div className="badges">
+              <a href="https://college-companion-by-imad.netlify.app/" target="_blank" rel="noreferrer" className="badge live">🚀 Live Demo</a>
+              <a href="https://github.com/mohammed-imad-umar/college-companion" target="_blank" rel="noreferrer" className="badge github">GitHub</a>
             </div>
-          )}
-        </div>
+            {viewProject === 1 && (
+              <div className="proj-overlay">
+                <div className="glossy-points">
+                  <p>📌 Built using React + Node.js</p>
+                  <p>📌 Implements role-based access</p>
+                  <p>📌 Optimized for mobile devices</p>
+                </div>
+              </div>
+            )}
+          </div>
 
-        {/* Electronic Signature */}
-        <div className="project-card" onClick={() => setActiveProject(activeProject === 2 ? null : 2)}>
-          <img src="/images/electronic-signature.png" alt="Electronic Signature" />
-          <h3>Electronic Signature</h3>
-          <div className="badges">
-            <a href="https://electronic-signature.netlify.app/" target="_blank" className="live-demo">🚀 Live Demo</a>
-            <a href="https://github.com/mohammed-imad-umar/Electronic_Signature-" target="_blank" className="github-badge">GitHub</a>
-          </div>
-          {activeProject === 2 && (
-            <div className="project-points">
-              <p>📌 Digital signing system with secure authentication.</p>
-              <p>📌 Smooth canvas-based signature capture.</p>
+          <div className="proj-card" onClick={() => setViewProject(viewProject === 2 ? null : 2)}>
+            <img src="/images/electronic-signature.png" alt="Electronic Signature" />
+            <h3>Electronic Signature</h3>
+            <div className="badges">
+              <a href="https://github.com/mohammed-imad-umar/Electronic_Signature-" target="_blank" rel="noreferrer" className="badge github">GitHub</a>
             </div>
-          )}
-        </div>
+            {viewProject === 2 && (
+              <div className="proj-overlay">
+                <div className="glossy-points">
+                  <p>📌 Secure digital signing</p>
+                  <p>📌 Integrated verification</p>
+                  <p>📌 Lightweight & fast</p>
+                </div>
+              </div>
+            )}
+          </div>
 
-        {/* Smart Parking */}
-        <div className="project-card" onClick={() => setActiveProject(activeProject === 3 ? null : 3)}>
-          <img src="/images/smart-parking-project.png" alt="Smart Parking" />
-          <h3>Smart Parking System</h3>
-          <div className="badges">
-            <a href="https://github.com/mohammed-imad-umar/smart-parking-system" target="_blank" className="github-badge">GitHub</a>
-          </div>
-          {activeProject === 3 && (
-            <div className="project-points">
-              <p>📌 IoT based real-time parking management.</p>
-              <p>📌 Mobile app + cloud integrated system.</p>
+          <div className="proj-card" onClick={() => setViewProject(viewProject === 3 ? null : 3)}>
+            <img src="/images/smart-parking-project.png" alt="Smart Parking" />
+            <h3>Smart Parking System</h3>
+            <div className="badges">
+              <a href="https://github.com/mohammed-imad-umar/smart-parking-system" target="_blank" rel="noreferrer" className="badge github">GitHub</a>
             </div>
-          )}
-        </div>
+            {viewProject === 3 && (
+              <div className="proj-overlay">
+                <div className="glossy-points">
+                  <p>📌 IoT based parking management</p>
+                  <p>📌 Real-time slot updates</p>
+                  <p>📌 Android app integration</p>
+                </div>
+              </div>
+            )}
+          </div>
 
-        {/* Detecting Twitter Bots */}
-        <div className="project-card" onClick={() => setActiveProject(activeProject === 4 ? null : 4)}>
-          <img src="/images/twitter-bots-project.png" alt="Twitter Bots" />
-          <h3>Detecting Twitter Bots</h3>
-          <div className="badges">
-            <a href="https://github.com/mohammed-imad-umar/detecting-twitter-bots" target="_blank" className="github-badge">GitHub</a>
-          </div>
-          {activeProject === 4 && (
-            <div className="project-points">
-              <p>📌 ML model to detect bot accounts on Twitter.</p>
-              <p>📌 High accuracy with real-time prediction.</p>
+          <div className="proj-card" onClick={() => setViewProject(viewProject === 4 ? null : 4)}>
+            <img src="/images/twitter-bots-project.png" alt="Twitter Bots" />
+            <h3>Detecting Twitter Bots</h3>
+            <div className="badges">
+              <a href="https://github.com/mohammed-imad-umar/detecting-twitter-bots" target="_blank" rel="noreferrer" className="badge github">GitHub</a>
             </div>
-          )}
+            {viewProject === 4 && (
+              <div className="proj-overlay">
+                <div className="glossy-points">
+                  <p>📌 ML model for bot detection</p>
+                  <p>📌 Trained on real Twitter data</p>
+                  <p>📌 Achieved 95% accuracy</p>
+                </div>
+              </div>
+            )}
+          </div>
+
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="contact">
-        <h2>Contact</h2>
-        <p>📧 imadu1525@gmail.com</p>
-        <p>📱 8919023402</p>
-      </section>
-
-      <footer>
-        <p>© 2025 Imad Umar | All rights reserved.</p>
-      </footer>
     </div>
   );
 }
