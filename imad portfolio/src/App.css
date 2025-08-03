@@ -1,77 +1,8 @@
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #0f0f0f;
-  color: #f5f5f5;
-}
-
-.app {
-  padding: 20px;
-  text-align: center;
-}
-
-.header h1 {
-  font-size: 2.2rem;
-  margin: 0;
-  color: #fff;
-}
-
-.header p {
-  color: #aaa;
-}
-
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin: 15px auto;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-.profile-img:hover { transform: scale(1.05); }
-
-.thumb {
-  width: 250px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-.thumb:hover { transform: scale(1.03); }
-
-.badges .badge {
-  background: #222;
-  color: #fff;
-  padding: 6px 12px;
-  margin: 5px;
-  border-radius: 6px;
-  display: inline-block;
-}
-
-.link-btn {
-  display: inline-block;
-  margin-top: 8px;
-  background: #1e90ff;
+  font-family: Arial, sans-serif;
+  background-color: #0d0d0d;
   color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  text-decoration: none;
-}
-
-.live-demo {
-  display: inline-block;
-  margin-left: 8px;
-  margin-top: 8px;
-  background: linear-gradient(90deg, #ff0080, #7928ca);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: transform 0.3s;
-}
-.live-demo:hover {
-  transform: scale(1.05);
-  background: linear-gradient(90deg, #ff4d4d, #ff9900);
 }
 
 /* Loader */
@@ -81,66 +12,149 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #000;
+  background: #0d0d0d;
+  color: white;
 }
 .loader-img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  animation: pulse 2s infinite;
+  margin-bottom: 20px;
+  border: 3px solid white;
 }
 .loader-text {
-  color: #fff;
-  margin-top: 15px;
   font-size: 1.2rem;
+  animation: blink 1.2s infinite;
+}
+@keyframes blink {
+  50% { opacity: 0.4; }
 }
 
-@keyframes pulse {
-  0% { transform: scale(0.9); opacity: 0.6; }
-  50% { transform: scale(1); opacity: 1; }
-  100% { transform: scale(0.9); opacity: 0.6; }
+/* Sections */
+.header, .about, .education, .skills, .projects, .contact, .footer {
+  padding: 20px;
+  text-align: center;
+}
+h1, h2, h3 {
+  margin: 10px 0;
+}
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-/* Modal Glass Effect */
+/* Education & Projects */
+.edu-card, .project-card {
+  background: #1a1a1a;
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 400px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.edu-card:hover, .project-card:hover {
+  transform: scale(1.03);
+}
+.thumb {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* Buttons */
+.link-btn {
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 16px;
+  background: #00bfff;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.link-btn:hover {
+  background: #008ccc;
+}
+.live-demo {
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #ff4e50, #f9d423);
+  color: #fff;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.live-demo:hover {
+  transform: scale(1.08);
+}
+
+/* Badges */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.badge {
+  background: #333;
+  color: white;
+  margin: 5px;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+.clickable:hover {
+  background: #555;
+}
+
+/* Modal */
 .modal {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(12px);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 1000;
+  animation: fadeIn 0.3s ease;
 }
-
 .modal-content {
-  max-width: 60%;
-  border-radius: 12px;
-  animation: zoomIn 0.4s ease;
+  max-width: 70%;
+  max-height: 60%;
+  border-radius: 8px;
 }
-
-@keyframes zoomIn {
-  0% { transform: scale(0.7); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-/* ATS Points */
 .modal-points {
-  position: absolute;
-  text-align: center;
-  color: #fff;
-  font-size: 1rem;
   margin-top: 20px;
+  text-align: center;
 }
-
 .point {
   opacity: 0;
-  animation: fadeInUp 0.8s forwards;
+  animation: fadeInRight 0.6s forwards;
+  margin: 6px 0;
+  background: rgba(255,255,255,0.1);
+  padding: 6px 12px;
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
 }
 
-@keyframes fadeInUp {
-  0% { transform: translateY(20px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Footer */
+.footer {
+  margin-top: 20px;
+  padding: 10px;
+  background: #111;
+  text-align: center;
+  font-size: 0.9rem;
 }
