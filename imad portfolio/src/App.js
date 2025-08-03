@@ -29,9 +29,9 @@ function App() {
           {modalImg && (
             <div className="modal" onClick={() => setModalImg(null)}>
               <img src={modalImg} alt="Enlarged" className="modal-content" />
-              <div className="modal-points-box">
+              <div className="modal-points">
                 {modalPoints.map((point, i) => (
-                  <p key={i} className="point" style={{ animationDelay: `${i * 0.4}s` }}>
+                  <p key={i} className="point" style={{ animationDelay: `${i * 0.5}s` }}>
                     {point}
                   </p>
                 ))}
@@ -55,7 +55,9 @@ function App() {
             />
             <h2>About Me</h2>
             <p>
-              I'm a passionate Computer Science & Engineering (AI & ML) student who loves building intelligent solutions. With hands-on experience in Java, Python, web development, and databases, I aim to create impactful, scalable applications that merge innovation with simplicity.
+              A passionate AI & ML engineering student who loves solving complex problems
+              and building efficient solutions using cutting-edge technologies. Skilled in
+              Java, Python, and full-stack development with a keen eye for detail and design.
             </p>
           </section>
 
@@ -99,32 +101,32 @@ function App() {
               className="project-card"
               onClick={() =>
                 openModal("/images/twitter-bots-project.png", [
-                  "ML model with 74% accuracy to detect bots",
-                  "NLP & tweet-frequency-based features",
-                  "Tkinter GUI for real-time predictions"
+                  "Built ML model with 74% accuracy to classify bots",
+                  "Implemented NLP & tweet-frequency features",
+                  "Developed Tkinter GUI for real-time predictions"
                 ])
               }
             >
               <img src="/images/twitter-bots-project.png" alt="Twitter Bots" className="thumb"/>
               <h3>Detecting Malicious Twitter Bots</h3>
               <a href="https://github.com/mohammed-imad-umar/detecting-twitter-bots"
-                 target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
+                 target="_blank" rel="noreferrer" className="link-btn glow">GitHub Link</a>
             </div>
 
             <div
               className="project-card"
               onClick={() =>
                 openModal("/images/smart-parking-project.png", [
-                  "IoT-based parking with Android + Node.js",
-                  "Reduced parking search time by 40%",
-                  "Secure REST APIs for payments"
+                  "IoT-based parking system with Android + Node.js",
+                  "Integrated GPS & sensors to reduce search time by 40%",
+                  "Built secure REST APIs for authentication & payments"
                 ])
               }
             >
               <img src="/images/smart-parking-project.png" alt="Smart Parking" className="thumb"/>
               <h3>Smart Parking System</h3>
               <a href="https://github.com/mohammed-imad-umar/smart-parking-system"
-                 target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
+                 target="_blank" rel="noreferrer" className="link-btn glow">GitHub Link</a>
             </div>
 
             <div
@@ -132,35 +134,17 @@ function App() {
               onClick={() =>
                 openModal("/images/electronic-signature.png", [
                   "Lightweight web-based signature app",
-                  "Built with HTML, CSS, and JS",
-                  "Download signatures as images"
+                  "Built with HTML, CSS, and JavaScript",
+                  "Download digital signature as image"
                 ])
               }
             >
               <img src="/images/electronic-signature.png" alt="Electronic Signature" className="thumb"/>
               <h3>Electronic Signature App</h3>
               <a href="https://github.com/mohammed-imad-umar/Electronic_Signature-"
-                 target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
+                 target="_blank" rel="noreferrer" className="link-btn glow">GitHub Link</a>
               <a href="https://electronic-signature.netlify.app/"
-                 target="_blank" rel="noreferrer" className="live-demo">🚀 Live Demo</a>
-            </div>
-
-            <div
-              className="project-card"
-              onClick={() =>
-                openModal("/images/college-companion.jpeg", [
-                  "All-in-one student productivity dashboard",
-                  "Integrated attendance, notes, and CGPA tools",
-                  "Real-time responsive UI for seamless access"
-                ])
-              }
-            >
-              <img src="/images/college-companion.jpeg" alt="College Companion" className="thumb"/>
-              <h3>College Companion</h3>
-              <a href="https://github.com/mohammed-imad-umar/college-companion"
-                 target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
-              <a href="https://college-companion-by-imad.netlify.app/"
-                 target="_blank" rel="noreferrer" className="live-demo">🚀 Live Demo</a>
+                 target="_blank" rel="noreferrer" className="live-demo glow">🚀 Live Demo</a>
             </div>
           </section>
 
@@ -168,11 +152,11 @@ function App() {
           <section className="contact">
             <h2>Get in Touch</h2>
             <div className="badges">
-              <a href="https://linkedin.com/in/mohammed-imad-umar" target="_blank" rel="noreferrer" className="badge clickable">LinkedIn</a>
-              <a href="https://leetcode.com/mohammed_imad_umar" target="_blank" rel="noreferrer" className="badge clickable">LeetCode</a>
-              <a href="https://github.com/mohammed-imad-umar" target="_blank" rel="noreferrer" className="badge clickable">GitHub</a>
-              <a href="mailto:imadu1525@gmail.com" className="badge clickable">Email</a>
-              <a href="/images/resume.pdf" target="_blank" rel="noreferrer" className="badge clickable">Resume</a>
+              <a href="https://www.linkedin.com/in/mohammed-imad-umar/" target="_blank" rel="noreferrer" className="badge contact-badge">LinkedIn</a>
+              <a href="https://leetcode.com/mohammed_imad_umar" target="_blank" rel="noreferrer" className="badge contact-badge">LeetCode</a>
+              <a href="https://github.com/mohammed-imad-umar" target="_blank" rel="noreferrer" className="badge contact-badge">GitHub</a>
+              <a href="mailto:imadu1525@gmail.com" className="badge contact-badge">Email</a>
+              <a href="/images/resume.pdf" target="_blank" rel="noreferrer" className="badge contact-badge">Resume</a>
             </div>
           </section>
 
