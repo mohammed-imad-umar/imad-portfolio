@@ -29,7 +29,7 @@ function App() {
           {modalImg && (
             <div className="modal" onClick={() => setModalImg(null)}>
               <img src={modalImg} alt="Enlarged" className="modal-content" />
-              <div className="modal-points">
+              <div className="modal-points-overlay">
                 {modalPoints.map((point, i) => (
                   <p key={i} className="point" style={{ animationDelay: `${i * 0.6}s` }}>
                     {point}
@@ -96,12 +96,11 @@ function App() {
           <section className="projects">
             <h2>Projects</h2>
 
-            {/* College Companion */}
             <div
               className="project-card"
               onClick={() =>
                 openModal("/images/college-companion.jpeg", [
-                  "Integrated assignment tracker and CGPA calculator",
+                  "Integrated assignment tracker & CGPA calculator",
                   "Built dynamic notes & syllabus management system",
                   "Optimized dashboard for seamless student workflow"
                 ])
@@ -115,7 +114,6 @@ function App() {
                  target="_blank" rel="noreferrer" className="live-demo">🚀 Live Demo</a>
             </div>
 
-            {/* Twitter Bots */}
             <div
               className="project-card"
               onClick={() =>
@@ -132,7 +130,6 @@ function App() {
                  target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
             </div>
 
-            {/* Smart Parking */}
             <div
               className="project-card"
               onClick={() =>
@@ -149,7 +146,6 @@ function App() {
                  target="_blank" rel="noreferrer" className="link-btn">GitHub Link</a>
             </div>
 
-            {/* Electronic Signature */}
             <div
               className="project-card"
               onClick={() =>
