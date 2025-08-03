@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
@@ -14,106 +13,42 @@ function App() {
     <>
       {loading ? (
         <div className="loader">
-          <img
-            src={process.env.PUBLIC_URL + "/images/profile-photo.jpeg"}
-            alt="Profile"
-            className="loader-img blink"
-          />
+          <img src="/images/profile-photo.jpeg" alt="Profile" className="loader-img blink" />
           <p className="loader-text">Imad's Portfolio Loading...</p>
         </div>
       ) : (
         <div className="app">
-
-          {/* Hero / Landing Section */}
-          <section
-            className="landing"
-            style={{
-              backgroundImage: `url(${process.env.PUBLIC_URL + "/images/profile-photo.jpeg"})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              position: "relative",
-            }}
-          >
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                backgroundColor: "rgba(255,255,255,0.2)",
-                backdropFilter: "blur(20px)",
-                zIndex: 1,
-              }}
-            />
-            <div
-              style={{
-                position: "relative",
-                zIndex: 2,
-                textAlign: "center",
-                paddingTop: "150px",
-                color: "#000",
-              }}
-            >
+          {/* Hero Section */}
+          <section className="hero" style={{ backgroundImage: "url('/images/profile-photo.jpeg')" }}>
+            <div className="hero-overlay" />
+            <div className="hero-content">
               <h1>Hello, I'm Mohammed Imad Umar</h1>
-              <p style={{ fontSize: "1.2rem", margin: "15px 0" }}>
-                A passionate CSE (AI & ML) student building smart and impactful tech.
-              </p>
-              <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
-                <a
-                  href="https://github.com/mohammed-imad-umar"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={process.env.PUBLIC_URL + "/images/github-logo.jpeg"}
-                    alt="GitHub"
-                    style={{ width: "40px" }}
-                  />
+              <p className="tagline">A passionate CSE (AI & ML) student creating impactful digital solutions.</p>
+              <div className="social-icons">
+                <a href="https://github.com/mohammed-imad-umar" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/github-logo.jpeg" alt="GitHub" />
                 </a>
-                <a
-                  href="https://www.linkedin.com/in/mohammed-imad-umar-215a682a8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={process.env.PUBLIC_URL + "/images/linkedin-logo.jpeg"}
-                    alt="LinkedIn"
-                    style={{ width: "40px" }}
-                  />
+                <a href="https://www.linkedin.com/in/mohammed-imad-umar-215a682a8" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/linkedin-logo.jpeg" alt="LinkedIn" />
                 </a>
               </div>
             </div>
-            <div style={{ height: "400px" }} />
           </section>
 
-          {/* About Me Section */}
+          {/* About Me */}
           <section className="about">
-            <img
-              src={process.env.PUBLIC_URL + "/images/cover.jpeg"}
-              alt="Cover"
-            />
-            <div>
+            <img src="/images/cover.jpeg" alt="Cover" className="about-img" />
+            <div className="about-text">
               <h2>About Me</h2>
               <p>
-                I'm a Computer Science student specializing in Artificial
-                Intelligence and Machine Learning at St. Martin's Engineering
-                College. With a strong foundation in full-stack web development
-                and a knack for problem-solving, I aim to create digital tools
-                that are both functional and user-friendly. I believe that code
-                is not just logic—it's a creative expression of problem-solving.
+                I'm a Computer Science student specializing in Artificial Intelligence and Machine Learning at St. Martin's Engineering College.
+                I love building full-stack applications that solve real-world problems with a mix of logic and creativity.
               </p>
               <p>
-                My portfolio reflects a range of real-life projects, including a
-                Twitter bot detector and IoT-based smart parking system. I enjoy
-                working on impactful tech that helps people—whether it's
-                automating tasks, managing student life, or building scalable
-                platforms. I'm always seeking new challenges and growth as a
-                tech enthusiast.
+                My portfolio reflects impactful projects, including IoT-based systems, Twitter bot detection models, and smart web apps.
+                I aim to create technology that simplifies life and brings innovation to everyday problems.
               </p>
-              <a
-                href={process.env.PUBLIC_URL + "/resume.pdf"}
-                download
-              >
-                Download CV
-              </a>
+              <a href="/resume.pdf" download className="cv-button">Download CV</a>
             </div>
           </section>
 
@@ -121,30 +56,21 @@ function App() {
           <section className="education">
             <h2>Education</h2>
             <div className="edu-item">
-              <img
-                src={process.env.PUBLIC_URL + "/images/st-martins-logo.jpeg"}
-                alt="BTech"
-              />
+              <img src="/images/st-martins-logo.jpeg" alt="BTech" />
               <div>
                 <h3>St. Martin’s Engineering College</h3>
                 <p>B.Tech – Computer Science (AI & ML)</p>
               </div>
             </div>
             <div className="edu-item">
-              <img
-                src={process.env.PUBLIC_URL + "/images/chaitanya-logo.jpeg"}
-                alt="Intermediate"
-              />
+              <img src="/images/chaitanya-logo.jpeg" alt="Intermediate" />
               <div>
                 <h3>Sri Chaitanya Jr. College</h3>
                 <p>Intermediate (MPC)</p>
               </div>
             </div>
             <div className="edu-item">
-              <img
-                src={process.env.PUBLIC_URL + "/images/st-francis-logo.jpeg"}
-                alt="School"
-              />
+              <img src="/images/st-francis-logo.jpeg" alt="School" />
               <div>
                 <h3>St. Francis De Sales High School</h3>
                 <p>10th Grade – GPA: 10.0</p>
@@ -169,45 +95,32 @@ function App() {
           <section className="projects">
             <h2>Projects</h2>
             <div className="project">
-              <img
-                src={process.env.PUBLIC_URL + "/images/twitter-bots-project.png"}
-                alt="Twitter Bot"
-              />
+              <img src="/images/twitter-bots-project.png" alt="Twitter Bot" />
               <h3>Detecting Twitter Bots</h3>
-              <p>
-                Built a machine learning model to identify bot accounts on
-                Twitter using behavioral data.
-              </p>
+              <p>Machine learning model to identify bot accounts on Twitter with real-time API testing.</p>
             </div>
             <div className="project">
-              <img
-                src={process.env.PUBLIC_URL + "/images/smart-parking-project.png"}
-                alt="Smart Parking"
-              />
+              <img src="/images/smart-parking-project.png" alt="Smart Parking" />
               <h3>IoT Smart Parking System</h3>
-              <p>
-                Developed an IoT-based smart parking system using NodeMCU and IR
-                sensors.
-              </p>
+              <p>IoT-based parking solution using NodeMCU and IR sensors with live dashboard.</p>
             </div>
             <div className="project">
-              <img
-                src={process.env.PUBLIC_URL + "/images/college-companion.jpeg"}
-                alt="College Companion"
-              />
+              <img src="/images/college-companion.jpeg" alt="College Companion" />
               <h3>College Companion</h3>
-              <p>
-                A full-stack app to manage college schedules, events, and
-                resources for students and faculty.
-              </p>
+              <p>Web app to manage student life with tasks, attendance, and notes in one place.</p>
+            </div>
+            <div className="project">
+              <img src="/images/electronic-signature.png" alt="E-Signature" />
+              <h3>Electronic Signature</h3>
+              <p>Web-based signature generator to securely create and download digital signatures.</p>
             </div>
           </section>
 
           {/* Contact */}
           <section className="contact">
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-            <p>Phone: 8919023402</p>
+            <p><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            <p><strong>Phone:</strong> 8919023402</p>
           </section>
 
           <footer className="footer">
