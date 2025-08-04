@@ -121,7 +121,7 @@ function App() {
               <span className="greeting-text">Hello, I'm</span>
             </div>
             <h1 className="hero-title">
-              <span className="gradient-text">Imad Umar</span>
+              <span className="gradient-text">Mohammed Imad Umar</span>
             </h1>
             <p className="hero-subtitle">
               <span className="typing-text">Crafting intelligent solutions with AI & modern web technologies</span>
