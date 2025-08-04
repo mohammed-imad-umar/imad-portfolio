@@ -14,7 +14,9 @@ function App() {
   if (loading) {
     return (
       <div className="loader">
-        <img src="/images/profile-photo.jpeg" alt="Loading" className="loader-img blink" />
+        <div className="loader-circle blink">
+          <img src="/images/profile-photo.jpeg" alt="Loading" className="loader-img blink" />
+        </div>
         <p className="loader-text blink">Loading Portfolio...</p>
       </div>
     );
@@ -24,7 +26,7 @@ function App() {
     <div className="App">
       {/* Hero Section */}
       <section className="hero">
-        <img src="/images/profile-photo.jpeg" alt="Profile" className="hero-bg" />
+        <img src="/images/profile-photo.jpeg" alt="Profile" className="hero-bg blur-img" />
         <div className="hero-text">
           <h1>Hello, I'm Imad Umar</h1>
           <p>Crafting intelligent solutions with AI & modern web technologies.</p>
@@ -41,7 +43,7 @@ function App() {
 
       {/* About Section */}
       <section className="about">
-        <img src="/images/cover.jpeg" alt="Cover" className="about-cover" />
+        <img src="/images/cover.jpeg" alt="Cover" className="about-cover big-cover" />
         <div>
           <h2>About Me</h2>
           <p>
@@ -71,6 +73,7 @@ function App() {
           </div>
         </div>
         <div className="edu-card" onClick={() => setActiveEducation(activeEducation === 2 ? null : 2)}>
+          {/* ✅ FIXED: Intermediate */}
           <img src="/images/st-francis-logo.jpeg" alt="Intermediate" />
           <div className="edu-info">
             <h3>Intermediate - MPC (2019 - 2021)</h3>
@@ -78,6 +81,7 @@ function App() {
           </div>
         </div>
         <div className="edu-card" onClick={() => setActiveEducation(activeEducation === 3 ? null : 3)}>
+          {/* ✅ FIXED: School */}
           <img src="/images/chaitanya-logo.jpeg" alt="School" />
           <div className="edu-info">
             <h3>Schooling - SSC (2018 - 2019)</h3>
@@ -99,9 +103,10 @@ function App() {
             <a href="https://github.com/mohammed-imad-umar/college-companion" target="_blank" className="github-badge">GitHub</a>
           </div>
           {activeProject === 1 && (
-            <div className="project-points">
+            <div className="project-points cinematic">
               <p>📌 Smart academic companion with interactive dashboard.</p>
               <p>📌 Integrated student resource management.</p>
+              <p>📌 Clean UI and responsive design.</p>
             </div>
           )}
         </div>
@@ -115,9 +120,10 @@ function App() {
             <a href="https://github.com/mohammed-imad-umar/Electronic_Signature-" target="_blank" className="github-badge">GitHub</a>
           </div>
           {activeProject === 2 && (
-            <div className="project-points">
+            <div className="project-points cinematic">
               <p>📌 Digital signing system with secure authentication.</p>
               <p>📌 Smooth canvas-based signature capture.</p>
+              <p>📌 Easy integration with other platforms.</p>
             </div>
           )}
         </div>
@@ -130,9 +136,10 @@ function App() {
             <a href="https://github.com/mohammed-imad-umar/smart-parking-system" target="_blank" className="github-badge">GitHub</a>
           </div>
           {activeProject === 3 && (
-            <div className="project-points">
+            <div className="project-points cinematic">
               <p>📌 IoT based real-time parking management.</p>
               <p>📌 Mobile app + cloud integrated system.</p>
+              <p>📌 Secure and scalable architecture.</p>
             </div>
           )}
         </div>
@@ -145,9 +152,10 @@ function App() {
             <a href="https://github.com/mohammed-imad-umar/detecting-twitter-bots" target="_blank" className="github-badge">GitHub</a>
           </div>
           {activeProject === 4 && (
-            <div className="project-points">
+            <div className="project-points cinematic">
               <p>📌 ML model to detect bot accounts on Twitter.</p>
               <p>📌 High accuracy with real-time prediction.</p>
+              <p>📌 Optimized for large datasets.</p>
             </div>
           )}
         </div>
