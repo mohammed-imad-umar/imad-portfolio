@@ -411,8 +411,8 @@ function App() {
                 {activeProject === 2 && (
                   <div className="project-features">
                     <div className="feature-item">📌 Secure Authentication</div>
-                    <div className="feature-item">�� Canvas Signature</div>
-                    <div className="feature-item">�� Easy Integration</div>
+                    <div className="feature-item">📌 Canvas Signature</div>
+                    <div className="feature-item">📌 Easy Integration</div>
                   </div>
                 )}
               </div>
@@ -439,7 +439,7 @@ function App() {
                   <div className="project-features">
                     <div className="feature-item">📌 IoT Integration</div>
                     <div className="feature-item">📌 Real-time Management</div>
-                    <div className="feature-item">�� Cloud Architecture</div>
+                    <div className="feature-item">📌 Cloud Architecture</div>
                   </div>
                 )}
               </div>
@@ -465,7 +465,7 @@ function App() {
                 {activeProject === 4 && (
                   <div className="project-features">
                     <div className="feature-item">📌 ML Model</div>
-                    <div className="feature-item">�� High Accuracy</div>
+                    <div className="feature-item">📌 High Accuracy</div>
                     <div className="feature-item">📌 Real-time Prediction</div>
                   </div>
                 )}
