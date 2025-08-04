@@ -227,6 +227,8 @@ body {
   align-items: center;
   gap: 12px;
   margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .wave {
@@ -245,6 +247,8 @@ body {
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.1;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .gradient-text {
@@ -260,6 +264,8 @@ body {
   color: #d0d0d0;
   margin-bottom: 1.5rem;
   font-weight: 300;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .typing-text {
@@ -277,10 +283,10 @@ body {
   font-size: 1.1rem;
   color: #888;
   font-weight: 400;
-  /* Added mobile-friendly margins */
   margin: 0 1rem;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  max-width: calc(100% - 2rem);
 }
 
 .hero-actions {
@@ -1303,23 +1309,25 @@ body {
     justify-content: center;
   }
   
-  /* Enhanced mobile margins for hero text */
-  .hero-description p {
-    margin: 0 1.5rem;
-    font-size: 1rem;
-    line-height: 1.7;
-  }
-  
-  .hero-subtitle {
-    margin: 0 1rem 1.5rem 1rem;
+  .hero-greeting {
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
   
   .hero-title {
-    margin: 0 1rem 1rem 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
   
-  .hero-greeting {
-    margin: 0 1rem 1rem 1rem;
+  .hero-subtitle {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  
+  .hero-description p {
+    margin: 0 2rem;
+    font-size: 1rem;
+    line-height: 1.7;
   }
 }
 
@@ -1360,22 +1368,24 @@ body {
     text-align: center;
   }
   
-  /* Additional mobile margins for very small screens */
-  .hero-description p {
-    margin: 0 2rem;
-    font-size: 0.95rem;
-  }
-  
-  .hero-subtitle {
-    margin: 0 1.5rem 1.5rem 1.5rem;
+  .hero-greeting {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
   }
   
   .hero-title {
-    margin: 0 1.5rem 1rem 1.5rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
   }
   
-  .hero-greeting {
-    margin: 0 1.5rem 1rem 1.5rem;
+  .hero-subtitle {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+  
+  .hero-description p {
+    margin: 0 2.5rem;
+    font-size: 0.95rem;
   }
 }
 
