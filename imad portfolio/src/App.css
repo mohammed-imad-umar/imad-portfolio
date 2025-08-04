@@ -277,6 +277,10 @@ body {
   font-size: 1.1rem;
   color: #888;
   font-weight: 400;
+  /* Added mobile-friendly margins */
+  margin: 0 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-actions {
@@ -1298,6 +1302,25 @@ body {
   .social-icons {
     justify-content: center;
   }
+  
+  /* Enhanced mobile margins for hero text */
+  .hero-description p {
+    margin: 0 1.5rem;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  .hero-subtitle {
+    margin: 0 1rem 1.5rem 1rem;
+  }
+  
+  .hero-title {
+    margin: 0 1rem 1rem 1rem;
+  }
+  
+  .hero-greeting {
+    margin: 0 1rem 1rem 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1335,6 +1358,24 @@ body {
   .contact-item {
     flex-direction: column;
     text-align: center;
+  }
+  
+  /* Additional mobile margins for very small screens */
+  .hero-description p {
+    margin: 0 2rem;
+    font-size: 0.95rem;
+  }
+  
+  .hero-subtitle {
+    margin: 0 1.5rem 1.5rem 1.5rem;
+  }
+  
+  .hero-title {
+    margin: 0 1.5rem 1rem 1.5rem;
+  }
+  
+  .hero-greeting {
+    margin: 0 1.5rem 1rem 1.5rem;
   }
 }
 
