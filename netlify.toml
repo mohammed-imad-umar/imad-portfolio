@@ -1,4 +1,13 @@
 [build]
   base = "imad portfolio"
-  command = "CI=false npm run build"
+  command = "npm run build"
   publish = "build"
+
+[build.environment]
+  CI = "false"
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
