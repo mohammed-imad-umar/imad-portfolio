@@ -69,7 +69,7 @@ function App() {
           <img src="/images/st-martins-logo.jpeg" alt="BTech" />
           <div className="edu-info">
             <h3>B.Tech - CSE (AI & ML) (2022 - 2026)</h3>
-            {activeEducation === 1 && <p className="edu-grade">CGPA: 8.5</p>}
+            {activeEducation === 1 && <p className="edu-grade">CGPA: 8.4</p>}
           </div>
         </div>
         <div className="edu-card" onClick={() => setActiveEducation(activeEducation === 2 ? null : 2)}>
@@ -77,7 +77,7 @@ function App() {
           <img src="/images/chaitanya-logo.jpeg" alt="Intermediate" />
           <div className="edu-info">
             <h3>Intermediate - MPC (2020 - 2022)</h3>
-            {activeEducation === 2 && <p className="edu-grade">Percentage: 94%</p>}
+            {activeEducation === 2 && <p className="edu-grade">Percentage: 94.4%</p>}
           </div>
         </div>
         <div className="edu-card" onClick={() => setActiveEducation(activeEducation === 3 ? null : 3)}>
@@ -85,7 +85,7 @@ function App() {
           <img src="/images/st-francis-logo.jpeg" alt="School" />
           <div className="edu-info">
             <h3>Schooling - SSC (2020)</h3>
-            {activeEducation === 3 && <p className="edu-grade">GPA: 9.8</p>}
+            {activeEducation === 3 && <p className="edu-grade">GRADE: 10.0</p>}
           </div>
         </div>
       </section>
