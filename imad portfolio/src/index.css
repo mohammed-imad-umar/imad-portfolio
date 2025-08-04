@@ -3407,18 +3407,7 @@ body {
   position: relative;
   display: inline-block;
 }
-
 .tooltip .tooltip-text {
-  visibility: hidden;
-  width: 120px;
-  background-color: var(--bg-tertiary);
-  color: var(--text-primary);
-  text-align: center;
-  border-radius: var(--border-radius-md);
-  padding: 0.5rem;
-  position: absolute;
-  z-index: var(--z-index-tooltip);
-  .tooltip .tooltip-text {
   visibility: hidden;
   width: 120px;
   background-color: var(--bg-tertiary);
@@ -3433,8 +3422,9 @@ body {
   margin-left: -60px;
   opacity: 0;
   transition: opacity 0.3s;
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--border-color);
 }
-
 .tooltip:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
