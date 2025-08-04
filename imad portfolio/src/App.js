@@ -68,23 +68,23 @@ function App() {
         <div className="edu-card" onClick={() => setActiveEducation(activeEducation === 1 ? null : 1)}>
           <img src="/images/st-martins-logo.jpeg" alt="BTech" />
           <div className="edu-info">
-            <h3>B.Tech - CSE (AI & ML) (2021 - 2025)</h3>
+            <h3>B.Tech - CSE (AI & ML) (2022 - 2026)</h3>
             {activeEducation === 1 && <p className="edu-grade">CGPA: 8.5</p>}
           </div>
         </div>
         <div className="edu-card" onClick={() => setActiveEducation(activeEducation === 2 ? null : 2)}>
           {/* ✅ FIXED: Intermediate */}
-          <img src="/images/st-francis-logo.jpeg" alt="Intermediate" />
+          <img src="/images/chaitanya-logo.jpeg" alt="Intermediate" />
           <div className="edu-info">
-            <h3>Intermediate - MPC (2019 - 2021)</h3>
+            <h3>Intermediate - MPC (2020 - 2022)</h3>
             {activeEducation === 2 && <p className="edu-grade">Percentage: 94%</p>}
           </div>
         </div>
         <div className="edu-card" onClick={() => setActiveEducation(activeEducation === 3 ? null : 3)}>
           {/* ✅ FIXED: School */}
-          <img src="/images/chaitanya-logo.jpeg" alt="School" />
+          <img src="/images/st-francis-logo.jpeg" alt="School" />
           <div className="edu-info">
-            <h3>Schooling - SSC (2018 - 2019)</h3>
+            <h3>Schooling - SSC (2020)</h3>
             {activeEducation === 3 && <p className="edu-grade">GPA: 9.8</p>}
           </div>
         </div>
